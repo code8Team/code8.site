@@ -132,16 +132,16 @@ function getQueryString(name) {
                 success: function (f) {
                     console.log(f)
                     d.p && (delete waitRequest[d.p])
-                    if (f.redirect) {
-                        location.href = f.redirect;
-                        return;
-                    }
                     if (f.msg || f.errmsg) {
                         alert(f.msg || f.errmsg)
                     }
                     if (f.cz == 'exit') {
                         document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
                         console.log('清除cookie')
+                    }
+                    if (f.redirect) {
+                        location.href = f.redirect;
+                        return;
                     }
                     n && n(f)
                 },
