@@ -356,7 +356,7 @@
 						if (v.user.Pendant.length) {
 							let s = ""
 							for (let i = 0; i < v.user.Pendant.length; i++) {
-								s += 'url(https://40code-cdn.zq990.com/static/internalapi/asset/' + v.user.Pendant[i].item.thumbId + ')'
+								s += 'url(https://40code-cdn.zq990.com/static/internalapi/asset/' + v.user.Pendant[i].item.thumbId2 + ')'
 								if (i < v.user.Pendant.length - 1) s += ','
 							}
 							$('.avatar.id' + v.workview.id)
