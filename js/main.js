@@ -732,6 +732,14 @@
 					msgpage: 1,
 					msgtotal: 0,
 					flisttype: !!getQueryString("type") - 0,
+					setdarkmode:()=>{
+						setTimeout(()=>{
+							if(v.$vuetify.theme.dark)
+							setCookie('darkmode','1',999)
+							else
+							setCookie('darkmode','0',999)
+						},100)
+					},
 					delmsg: e => {
 						post({
 							url: "/user/message/delete",
@@ -1407,7 +1415,8 @@
 							.join("0") + i)
 						.slice(-2) + " ") : n.getMonth() + 1 + "-" + n.getDate() + " " : n.getYear() + 1900 + "-" + (n.getMonth() + 1) + "-" + n.getDate() + " ", t
 				}
-			}, window.v = new Vue({
+			};
+			 window.v = new Vue({
 				el: "#app",
 				data: Object.assign(e, t, other),
 				vuetify: new Vuetify({
@@ -1439,7 +1448,12 @@
 						let e = v.search.s[v.search.type].indexOf(v.search.select[v.search.type]); - 1 == e || (v.search.s2 = e)
 					}
 				}
-			}), v.qh2(), window.addEventListener("hashchange", (function(e) {
+			});
+			if(getCookie('darkmode')=='1')
+			v.$vuetify.theme.dark=1;
+			else
+			v.$vuetify.theme.dark=false;
+			 v.qh2(), window.addEventListener("hashchange", (function(e) {
 				console.log(e), v.qh2()
 			})), $(document)
 			.ready((function() {
@@ -1455,6 +1469,7 @@
 				})), setInterval((() => {
 					"visible" == document.visibilityState && getuserinfo()
 				}), 4e4)
-			}))
+			}));
+
 	})()
 })();

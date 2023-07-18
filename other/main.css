@@ -1,0 +1,70 @@
+a {
+    text-decoration: none
+}
+
+.tg {
+    color: #888 !important
+}
+
+.br {
+    border-radius: 8px
+}
+
+.l {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.l2 {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.sd {
+    border-radius: 12px !important;
+    -webkit-box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.03), 0 12px 17px 2px rgba(0, 0, 0, 0.021), 0 5px 22px 4px rgba(0, 0, 0, 0.018) !important;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.03), 0 12px 17px 2px rgba(0, 0, 0, 0.021), 0 5px 22px 4px rgba(0, 0, 0, 0.018) !important;
+}
+.pm img {
+    max-width:100%
+}
+.comment-view .pm img{
+    max-height: 200px;
+}
+.s-input{
+    background: #f7f7f7;
+    margin-top: 24px!important;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: #555;
+    border: none;
+    outline: none;
+}
+pre{
+    background-color: #111;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+:not([class*="scratch"]) > code {
+    color: #eee !important;
+}
+pre > code {
+    background-color: rgba(0,0,0,0)!important;
+}
+:not(pre,[class*="scratch"]) > code{
+    background-color: #333!important;
+}
+
+.avatar::after {
+    content: "";
+    display: block;
+    margin-top: -112px;
+    margin-left: -112px;
+    width: 360px;
+    height: 360px;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-image: url(https://40code-cdn.zq990.com/static/internalapi/asset/f031e776a8e459081091cdf9bcee3307.svg); */
+  }
