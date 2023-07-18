@@ -338,7 +338,17 @@
 							useto: v.comment.t[v.viewmode]
 						}
 					}, (e => {
-						v.item.workItems = e.data
+						v.item.workItems = e.data.filter(e=>e.item.category!=='Pendant')
+						v.user.Pendant=e.data.filter(e=>e.item.category=='Pendant')
+						if(v.user.Pendant.length){
+							let s=""
+							for(let i=0;i<v.user.Pendant.length;i++){
+								s+='url(https://40code-cdn.zq990.com/static/internalapi/asset/'+v.user.Pendant[i].item.thumbId+')'
+								if(i<v.user.Pendant.length-1) s+=','
+							}
+							$('.avatar.id'+v.workview.id)
+							.css('background-image',s)
+						}
 					}))
 				},
 				useinfo: null,
@@ -1455,6 +1465,7 @@
 			v.$vuetify.theme.dark = 1;
 		else
 			v.$vuetify.theme.dark = false;
+		v.markdownToHtml=window.markdownToHtml
 		v.qh2(), window.addEventListener("hashchange", (function (e) {
 			console.log(e), v.qh2()
 		})), $(document)

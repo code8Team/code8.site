@@ -55,7 +55,7 @@ pre > code {
     background-color: #333!important;
 }
 
-.avatar::after {
+.avatar {
     content: "";
     display: block;
     margin-top: -112px;
@@ -66,5 +66,9 @@ pre > code {
     position: absolute;
     top: 0;
     left: 0;
+    z-index:1;
     /* background-image: url(https://40code-cdn.zq990.com/static/internalapi/asset/f031e776a8e459081091cdf9bcee3307.svg); */
+  }
+  button{
+      z-index:2;
   }
