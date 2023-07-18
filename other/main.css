@@ -67,8 +67,22 @@ pre > code {
     top: 0;
     left: 0;
     z-index:1;
+    pointer-events: none;
     /* background-image: url(https://40code-cdn.zq990.com/static/internalapi/asset/f031e776a8e459081091cdf9bcee3307.svg); */
   }
-  button{
-      z-index:2;
+
+  .avatar2 {
+    content: "";
+    display: block;
+    margin-top: -40px;
+    margin-left: -40px;
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    position: absolute;
+    /* top: 0; */
+    /* left: 0; */
+    z-index: 1;
+    pointer-events: none;
+    /* background-image: url(https://40code-cdn.zq990.com/static/internalapi/asset/f031e776a8e459081091cdf9bcee3307.svg); */
   }
