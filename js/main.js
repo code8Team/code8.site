@@ -353,6 +353,8 @@
 					}, (e => {
 						v.item.workItems = e.data.filter(e => e.item.category !== 'Pendant')
 						v.user.Pendant = e.data.filter(e => e.item.category == 'Pendant')
+						$('.avatar.id' + v.workview.id)
+								.css('background-image', '')
 						if (v.user.Pendant.length) {
 							let s = ""
 							for (let i = 0; i < v.user.Pendant.length; i++) {
