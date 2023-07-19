@@ -443,7 +443,9 @@
 			}, {
 				title: "退出登录",
 				c: function () {
-					document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.40code.com", console.log("清除cookie"), location.href = ""
+					document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.40code.com";
+					document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+					 console.log("清除cookie"), location.href = ""
 				}
 			}]
 		},
