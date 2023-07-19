@@ -759,6 +759,7 @@
 				flisttype: !!getQueryString("type") - 0,
 				setdarkmode: () => {
 					setTimeout(() => {
+						setCookie('darkmode', '0', -999)
 						if (v.$vuetify.theme.dark)
 							setCookie('darkmode', '1', 999)
 						else

@@ -12,6 +12,12 @@ function getQueryString(name) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toGMTString()+(1 || location.host=='127.0.0.1:5500'?' path=/;':'; domain=.40code.com; path=/;');
+    if(exdays<0){
+      var expires = "expires=" + d.toGMTString()+(' path=/;');
+      document.cookie = cname + "=" + cvalue + "; " + expires;
+      var expires = "expires=" + d.toGMTString()+('domain=.40code.com; path=/;');
+      document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
     document.cookie = cname + "=" + cvalue + "; " + expires;
   }
   function getCookie(cname) {
