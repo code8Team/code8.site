@@ -11,7 +11,7 @@ function getQueryString(name) {
     console.log('设置cookie')
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toGMTString()+(location.host=='127.0.0.1:5500'?' path=/;':'; domain=.40code.com; path=/;');
+    var expires = "expires=" + d.toGMTString()+(1 || location.host=='127.0.0.1:5500'?' path=/;':'; domain=.40code.com; path=/;');
     document.cookie = cname + "=" + cvalue + "; " + expires;
   }
   function getCookie(cname) {
