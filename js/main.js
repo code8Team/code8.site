@@ -774,7 +774,10 @@
 						for(let i=0;i<d.length;i++){
 							s+=`<br>
 							<span class="body-1 text--primary">${d[i].note}</span><br>
-							<span class="body-2 text--disabled" style="margin-top:-5px">${d[i].create_time}</span>
+							<span class="body-2" style="margin-top:-5px">
+							<span class="primary--text">${d[i].coin_count}</span>
+							<span class="text--disabled">${d[i].create_time}</span>
+							</span>
 							`
 						}
 						dialog(`
