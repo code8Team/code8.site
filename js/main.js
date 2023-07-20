@@ -768,6 +768,23 @@
 							setCookie('darkmode', '0', 999)
 					}, 100)
 				},
+				getCoins: d=>{
+					get('user/records',function(d){
+						let s='';
+						for(let i=0;i<d.length;i++){
+							s+=`<br>
+							<span class="body-1 text--primary">${d[i].note}</span><br>
+							<span class="body-2 text--disabled" style="margin-top:-5px">${d[i].create_time}</span>
+							`
+						}
+						dialog(`
+						<div style="height: 300px; overflow: auto; width:100%">
+							${s}
+						</div>
+						`)
+					})
+					
+				},
 				delmsg: e => {
 					post({
 						url: "/user/message/delete",
