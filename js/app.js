@@ -103,6 +103,7 @@ function getQueryString(name) {
                     }
                     if (f.cz == 'exit') {
                         document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+                        document.cookie = 'token=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.40code.com; path=/;';document.cookie = 'token=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
                         console.log('清除cookie')
                     }
                     d.p && (delete waitRequest[d.p])
