@@ -209,8 +209,8 @@ function savecover(callback) {
   }
   function hy(r) {
 
-    let k = r.data[2][0][1].Key.split('/');
-    callback && callback(k[k.length - 1]);
+    // let k = r.data[2][0][1].Key.split('/');
+    callback && callback(r.data[0]);
     setTimeout(() => {
       $("#setCover").text(window.$t("js.scratch.5sb6i8uwwuc0"));
       $("#saveProject").text(window.$t("js.scratch.5sb6i8uwwz80"));
