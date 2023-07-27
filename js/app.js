@@ -917,6 +917,7 @@ else for(let i=0;i<m2.length;i++){
 if(!window.language2){
   window.language2='en'
 }
+if(!window.i18next)window.i18next=top.i18next;
 i18next.init({
   lng:window.language2,
   resources:msg
