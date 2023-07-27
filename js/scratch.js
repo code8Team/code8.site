@@ -2,6 +2,7 @@ apihost = "https://api.code8.site/";
 window.waitRequest = {}, window.scratch = {
 
 };
+var id=getQueryString('id')
 var temp2 = {
   apihost: "https://api.code8.site/",
 };
