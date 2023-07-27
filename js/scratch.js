@@ -1,10 +1,10 @@
-apihost = "https://api.code8.site/";
+apihost = "https://api.code8.site/api/";
 window.waitRequest = {}, window.scratch = {
 
 };
 var id=getQueryString('id')
 var temp2 = {
-  apihost: "https://api.code8.site/",
+  apihost: "https://api.code8.site/api/",
 };
 function dataURLToBlob(dataurl) {
   var arr = dataurl.split(',');
