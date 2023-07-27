@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>40code少儿编程社区</title>
+    <title>code8</title>
     <script src="https://cdn.staticfile.org/echarts/5.3.2/echarts.min.js"></script>
   </head>
   <body>
@@ -31,7 +31,7 @@
         option = {
           title: {
             text: h.info,
-            subtext: "由40code.com统计 总积木数："+data.total,
+            subtext: "Statistics by code8.site,Total number of building blocks(for reference only)："+data.total,
             left: "center",
           },
           tooltip: {
@@ -48,7 +48,7 @@
           },
           series: [
             {
-              name: "类别",
+              name: "category",
               type: "pie",
               radius: "55%",
               center: ["40%", "50%"],
@@ -72,7 +72,7 @@
             s+=h.context[o[i]];
           }
           for (var i = 0; i < o.length; i++) {
-            var name = opcodes[o[i]] || o[i];
+            var name =o[i]; //opcodes[o[i]] || o[i];
             legendData.push(name);
             seriesData.push({
               name: name+'  ' + (h.context[o[i]]/s*100).toFixed(1)+"%",
@@ -81,11 +81,11 @@
           }
           document.getElementById('r').innerHTML=
           // "不含圆形积木数:"+h.noreturn+"<br>"+
-          "有效积木数:"+h.valid+"<br>"
-          +"有效片段数:"+h.vsegs+"<br>"
-          +"总片段数:"+h.segs+"<br>"
-          +"角色数:"+h.jn+"<br>"
-          +"素材数:"+h.an+"<br>";
+          "# of building blocks:"+h.valid+"<br>"
+          +"# of valid fragments:"+h.vsegs+"<br>"
+          +"# of segments:"+h.segs+"<br>"
+          +"# of spirits:"+h.jn+"<br>"
+          +"# of assets:"+h.an+"<br>";
           return {
             legendData: legendData,
             seriesData: seriesData,

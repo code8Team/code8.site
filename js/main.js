@@ -1,4 +1,5 @@
 (() => {
+	
 	var __webpack_modules__ = {
 		177: e => {
 			e.exports = {
@@ -39,7 +40,7 @@
 						p: "changeinfo"
 					}, (function (e) {
 						alert(e.msg), location.href = ""
-					})) : alert("请选择图片并等待上传完毕后再继续操作")
+					})) : alert(window.$t('js.main.5sb0258vva80'))
 				},
 				update: function () {
 					1 != v.waitRequest.cover ? (setCookie("newpage", v.account.newpage, 999), post({
@@ -57,7 +58,7 @@
 						p: "changeinfo"
 					}, (function (e) {
 						alert(e.msg)
-					}))) : alert("请选择图片并等待上传完毕后再继续操作")
+					}))) : alert(window.$t('js.main.5sb0258vva80'))
 				},
 				edits: e => {
 					let t = {};
@@ -90,7 +91,7 @@
 						},
 						p: "comment"
 					}, (e => {
-						v.comment.text.comment = "", console.log(e), alert("发送成功"), v.comment.getcomment()
+						v.comment.text.comment = "", console.log(e), alert(window.$t('js.main.5sb0258vw740')), v.comment.getcomment()
 					}))
 				},
 				showmore: e => {
@@ -119,10 +120,10 @@
 						for (let e in t.comment) t.comment[e].comment = markdownToHtml(t.comment[e].comment), t.comment[e].time = other.date(t.comment[e].time);
 						for (let e in t.reply)
 							for (let n in t.reply[e]) t.reply[e][n].comment = t.reply[e][n].comment ? markdownToHtml(t.reply[e][n].comment) : "", t.reply[e][n].time = other.date(t.reply[e][n].time);
-						Vue.set(v.comment, "comment", t), setTimeout(v.comment.b, 300), console.log("获取评论", e);
+						Vue.set(v.comment, "comment", t), setTimeout(v.comment.b, 300), console.log(window.$t('js.main.5sb0258vwcg0'), e);
 						setTimeout(() => {
 							for (let i = 0; i < t.pendant.length; i++) {
-									let s = 'url(https://40code-cdn.zq990.com/static/internalapi/asset/' + t.pendant[i].thumbId + ')'
+									let s = 'url(https://api.code8.site/static/' + t.pendant[i].thumbId + ')'
 									let c=$('.avatar2.id' + t.pendant[i].useid)
 									.css('background-image')
 									if (c)
@@ -136,7 +137,7 @@
 					}))
 				},
 				delete: async function (e, t) {
-					confirm("你确定要删除此评论吗? " + (t ? "" : "(你正在使用管理员权限)")) && post({
+					confirm(window.$t('js.main.p1') + (t ? "" : window.$t('js.main.p2'))) && post({
 						url: "comment/delete",
 						data: {
 							id: e,
@@ -144,11 +145,11 @@
 						},
 						p: "commentdelete"
 					}, (e => {
-						console.log(e), alert("删除成功"), v.comment.getcomment()
+						console.log(e), alert(window.$t('js.main.5sb0258vwfg0')), v.comment.getcomment()
 					}))
 				},
 				deletereply: async function (e, t) {
-					confirm("你确定要删除此评论吗? " + (t ? "" : "(你正在使用管理员权限)")) && post({
+					confirm(window.$t('js.main.p1') + (t ? "" : window.$t('js.main.p2'))) && post({
 						url: "comment/reply/delete",
 						data: {
 							id: e,
@@ -156,7 +157,7 @@
 						},
 						p: "commentdelete"
 					}, (e => {
-						console.log(e), alert("删除成功"), v.comment.getcomment()
+						console.log(e), alert(window.$t('js.main.5sb0258vwfg0')), v.comment.getcomment()
 					}))
 				},
 				reply: e => {
@@ -172,7 +173,7 @@
 						},
 						p: "comment" + e
 					}, (t => {
-						console.log(t), v.comment.text["c-" + e] = "", alert("发送成功"), v.comment.getcomment()
+						console.log(t), v.comment.text["c-" + e] = "", alert(window.$t('js.main.5sb0258vw740')), v.comment.getcomment()
 					}))
 				},
 				showreply: function (e, t) {
@@ -232,7 +233,7 @@
 						.val()
 						.length < 3 || $("#fcontext")
 							.val()
-							.length < 3 ? alert("标题和正文必须大于2个字") : (v.forum.sending = 1, post({
+							.length < 3 ? alert(window.$t('js.main.5sb0258vwl40')) : (v.forum.sending = 1, post({
 								url: "forum/new",
 								data: {
 									title: $("#ftitle")
@@ -261,7 +262,7 @@
 					}
 				},
 				delete: () => {
-					confirm("你确定要删除这个帖子吗") && post({
+					confirm(window.$t('js.main.5sb0258vwpc0')) && post({
 						url: "forum/delete",
 						data: {
 							id: getQueryString("id")
@@ -322,7 +323,7 @@
 					v.item.showbag = 0, v.item.useinfo = {
 						id: e,
 						template: __webpack_require__(953)[e] || {
-							t: "确认使用-" + v.item.StoreItems[e]?.name + "?"
+							t: window.$t('js.main.5sb0258vwsw0') + v.item.StoreItems[e]?.name + "?"
 						}
 					}
 				},
@@ -358,7 +359,7 @@
 						if (v.user.Pendant.length) {
 							let s = ""
 							for (let i = 0; i < v.user.Pendant.length; i++) {
-								s += 'url(https://40code-cdn.zq990.com/static/internalapi/asset/' + v.user.Pendant[i].item.thumbId2 + ')'
+								s += 'url(https://api.code8.site/static/' + v.user.Pendant[i].item.thumbId2 + ')'
 								if (i < v.user.Pendant.length - 1) s += ','
 							}
 							$('.avatar.id' + v.workview.id)
@@ -378,81 +379,83 @@
 		953: e => {
 			e.exports = {
 				0: {
-					t: '\n        <div style="width:100%">若你作品中包含其他人的素材或代码，请在这里注明。<br>\n        若此作品非你原创，请使用转载声明</div>\n        <textarea rows="5" id="gyycdsm" class="s-input">说明</textarea>',
+					t: '\n<div style="width:100%">'+window.$t('js.main.5sb08wussvk0')+'<br>\n' +window.$t('js.main.5sb08wustm80')+'</div>\n<textarea rows="5" id="gyycdsm" class="s-input">'+'说明'+'</textarea>',
 					f: '{descp:$("#gyycdsm").val()}'
 				},
 				1: {
-					t: '请注明你作品的来源<br><br><br>\n        <textarea rows="5" id="sdfirf" class="s-input">说明</textarea>',
+					t: window.$t('js.main.5sb08wustrc0')+'<br><br><br>\n        <textarea rows="5" id="sdfirf" class="s-input">'+window.$t('js.main.p4')+'</textarea>',
 					f: '{descp:$("#sdfirf").val()}'
 				},
 				5: {
-					t: "新手礼包",
-					a: "你已获得：原创声明*1，转载声明*1，银元宝*1。<br>\n        "
+					t: window.$t('js.main.5sb0258vwwg0'),
+					a: window.$t('js.main.5sb08wustug0')+"<br>\n        "
 				},
 				6: {
-					t: "初级精华作品大礼包",
-					a: "你已获得：初级精华选票*8，金元宝*1。<br>\n        "
+					t: window.$t('js.main.5sb0258vwzo0'),
+					a: window.$t('js.main.5sb08wustxg0')+"<br>\n        "
 				},
 				12: {
-					t: '禁言时间<input id="jysj" class="s-input" value="1"></input>天',
+					t: window.$t('js.main.5sb08wusu180')+'<input id="jysj" class="s-input" value="1"></input>'+window.$t('js.main.5sb08wusu400'),
 					f: '{time:$("#jysj").val()}'
 				}
 			}
 		},
 		105: e => {
 			e.exports = [{
-				title: "我的主页",
+				title: window.$t('js.main.5sb0258vx2o0'),
 				c: function () {
 					location.href = "#page=user&id=" + v.detail.id
 				}
 			}, {
-				title: "我的作品",
+				title: window.$t('js.main.5sb0258vx5c0'),
 				c: function () {
 					location.href = "#page=mywork"
 				}
 			}, {
-				title: "我的工作室",
+				title: window.$t('js.main.5sb0258vx8c0'),
 				c: function () {
 					location.href = "#page=mystudio"
 				}
 			}, {
-				title: "我的物品",
+				title: window.$t('js.main.5sb0258vxaw0'),
 				c: function () {
 					location.href = "#page=myitem"
 				}
 			}, {
-				title: "账号设置",
+				title: window.$t('js.main.5sb0258vxec0'),
 				c: function () {
 					location.href = "#page=account"
 				}
 			}, {
-				title: "我的收藏",
+				title: window.$t('js.main.5sb0258vxh80'),
 				c: function () {
 					location.href = "#page=sc"
 				}
-			}, {
-				title: "邀请用户领金币",
-				c: function () {
-					dialog(`\n           你的专属链接<code>\n           ${"https://40code.com/#out=any&i=" + v.detail.id}\n           </code><br>\n           别人(必须是新用户)通过你的专属链接进行账号注册<br>\n           你和他都可获得100金币\n           `)
-				}
-			}, {
-				title: "刷新",
+			}, 
+			// {
+			// 	title: window.$t('js.main.5sb0258vxjs0'),
+			// 	c: function () {
+			// 		dialog(`\n           你的专属链接<code>\n           ${"https://code8.site/#out=any&i=" + v.detail.id}\n           </code><br>\n           别人(必须是新用户)通过你的专属链接进行账号注册<br>\n           你和他都可获得100金币\n           `)
+			// 	}
+			// },
+			 {
+				title: window.$t('js.main.5sb0258vxmk0'),
 				c: function () {
 					v.qh2()
 				}
 			}, {
-				title: "退出登录",
+				title: window.$t('js.main.5sb0258vxpc0'),
 				c: function () {
-					document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.40code.com";
+					document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.code8.site";
 					document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
-					 console.log("清除cookie"), location.href = ""
+					 console.log(window.$t('js.main.5sb0258vxrs0')), location.href = ""
 				}
 			}]
 		},
 		115: e => {
 			e.exports = [e => {
 				let t = new FormData;
-				return console.log(e), e.size > 1e6 ? "图片必须小于1MB" : -1 == ["image/jpeg", "image/png", "image/gif", "image/bmp"].indexOf(e.type) ? "不支持此格式的图片" : (t.append("image", new Blob([e], {
+				return console.log(e), e.size > 1e6 ? window.$t('js.main.5sb0258vxv00') : -1 == ["image/jpeg", "image/png", "image/gif", "image/bmp"].indexOf(e.type) ? window.$t('js.main.5sb0258vy0k0') : (t.append("image", new Blob([e], {
 					type: e.type
 				})), void
 					function (t) {
@@ -465,11 +468,11 @@
 							processData: !1,
 							dataType: "json",
 							success: function (t) {
-								let n = t.data[2][0][1].Key.split("/");
-								v.detail.image = v.workview.image = n[n.length - 1], e = void 0, v.waitRequest.cover = -1
+								// let n = t.data[2][0][1].Key.split("/");
+								v.detail.image = v.workview.image = t.data[0], e = void 0, v.waitRequest.cover = -1
 							},
 							error: function () {
-								alert("图片上传失败"), v.waitRequest.cover = -1, delete v.waitRequest.cover
+								alert(window.$t('js.main.5sb0258vy300')), v.waitRequest.cover = -1, delete v.waitRequest.cover
 							}
 						})
 					}(t))
@@ -492,21 +495,21 @@
 				time: 0,
 				sid: 0,
 				s: [
-					["最早创建", "最早发布", "最近更新", "最近发布", "最多点赞", "最多浏览", "最多收藏"],
-					["最多金币", "最新注册", "最早注册"],
-					["最多成员", "最多作品", "最早创建", "最新创建"]
+					[window.$t('js.main.5sb0258vy5o0'), window.$t('js.main.5sb0258vy880'), window.$t('js.main.5sb0258vyac0'), window.$t('js.main.5sb0258vyco0'), window.$t('js.main.5sb0258vyf40'), window.$t('js.main.5sb0258vyhc0'), window.$t('js.main.5sb0258vyjs0')],
+					[window.$t('js.main.5sb0258vyls0'), window.$t('js.main.5sb0258vyo40'), window.$t('js.main.5sb0258vyqc0')],
+					[window.$t('js.main.5sb0258vyss0'), window.$t('js.main.5sb0258vyuw0'), window.$t('js.main.5sb0258vy5o0'), window.$t('js.main.5sb0258vyx40')]
 				],
 				isfirst: 1,
-				select: ["最新发布", "最多金币", "最多成员"]
+				select: [window.$t('js.main.5sb0258vyzs0'), window.$t('js.main.5sb0258vyls0'), window.$t('js.main.5sb0258vyss0')]
 			}
 		},
 		545: (e, t) => {
 			e.exports = {
-				email: [e => /^1[3456789]\d{9}$|^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(e) || "请输入正确的邮箱或手机号"],
-				code: [e => /^\d{6}$/.test(e) || "请输入6位数字验证码"],
+				email: [e => /^1[3456789]\d{9}$|^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(e) || window.$t('js.main.5sb0258vz200')],
+				code: [e => /^\d{6}$/.test(e) || window.$t('js.main.5sb0258vz4c0')],
 				sendcode: () => {
 					!0 === v.sign.email[0]($("#email")
-						.val()) ? (gt2.showCaptcha()) : alert("请输入正确的邮箱或手机号")
+						.val()) ? (gt2.showCaptcha()) : alert(window.$t('js.main.5sb0258vz200'))
 				},
 				state: 0,
 				s: e => {
@@ -533,7 +536,7 @@
 					}, (function (t) {
 						// gt.reset(); 1 == t.code ? 0 == e ? (location.href = getQueryString("url") ? atob(getQueryString("url")) : "#", alert(t.msg), setCookie("token", t.token, 30), getuserinfo()) : (alert(t.msg), v.sign.state = 0) : alert(t.msg, 8e3)
 						gt.reset(); 1 == t.code ? (location.href = getQueryString("url") ? atob(getQueryString("url")) : "#", alert(t.msg), setCookie("token", t.token, 30), getuserinfo()) : alert(t.msg, 8e3)
-					})) : alert("请先完成图形验证码")//gt2.reset() && (gt2.a=1) && setTimeout(()=>gt2.showCaptcha(),200)
+					})) : alert(window.$t('js.main.p3'))//gt2.reset() && (gt2.a=1) && setTimeout(()=>gt2.showCaptcha(),200)
 				},
 				data: {
 					email: "",
@@ -551,7 +554,7 @@
 		771: e => {
 			e.exports = {
 				new: function () {
-					confirm("你确定要创建工作室吗？") && get({
+					confirm(window.$t('js.main.5sb0258vz6g0')) && get({
 						url: "studio/new",
 						p: "newstudio"
 					}, (function (e) {
@@ -559,7 +562,7 @@
 					}))
 				},
 				remove: e => {
-					confirm("你确定要删除TA吗") && post({
+					confirm(window.$t('js.main.5sb0258vz8w0')) && post({
 						url: "studio/delete",
 						p: "deleteuser",
 						data: {
@@ -623,7 +626,7 @@
 									}))
 				},
 				quit: () => {
-					confirm("你确定要退出吗") && post({
+					confirm(window.$t('js.main.5sb0258vzb00')) && post({
 						url: "studio/quit",
 						data: {
 							id: v.studio.info.id
@@ -633,10 +636,10 @@
 					}))
 				},
 				join: () => {
-					2 == v.studio.info.chose && alert("此工作室禁止任何人加入"), post({
+					2 == v.studio.info.chose && alert(window.$t('js.main.5sb0258vzdc0')), post({
 						url: "studio/join",
 						data: {
-							pw: v.studio.info.haspw && prompt("请输入工作室加入密码"),
+							pw: v.studio.info.haspw && prompt(window.$t('js.main.5sb0258vzg00')),
 							id: v.studio.info.id
 						}
 					}, (() => v.qh2()))
@@ -650,11 +653,11 @@
 					})
 				},
 				upload: () => {
-					let e, t = prompt("请输入作品的链接或id");
+					let e, t = prompt(window.$t('js.main.5sb0258vzik0'));
 					if (isNaN(parseInt(t, 10))) {
-						if (t.indexOf("#") < 0) return void alert("请输入正确的链接");
+						if (t.indexOf("#") < 0) return void alert(window.$t('js.main.5sb0258vzlg0'));
 						let n = new RegExp("(^|&)id=([^&]*)(&|$)", "i");
-						if (e = t.split("#")[1].match(n)[2], !e) return void alert("请输入正确的链接")
+						if (e = t.split("#")[1].match(n)[2], !e) return void alert(window.$t('js.main.5sb0258vzlg0'))
 					} else e = t;
 					post({
 						url: "studio/upload",
@@ -708,7 +711,7 @@
 							l: e
 						}
 					}, (e => {
-						v.worklist = e.data, v.userlist = e.userlist, console.log("获取评论", e)
+						v.worklist = e.data, v.userlist = e.userlist, console.log(window.$t('js.main.5sb0258vwcg0'), e)
 					}))
 				},
 				getmessage: () => {
@@ -721,7 +724,7 @@
 					}, (e => {
 						let t = e.data;
 						for (let e in t) t[e].time = other.date(t[e].time);
-						v.user.message = t, Vue.set(v.user, "msgtotal", e.num), console.log("获取消息", e), v.detail.msgnum = 0
+						v.user.message = t, Vue.set(v.user, "msgtotal", e.num), console.log(window.$t('js.main.5sb0258vznk0'), e), v.detail.msgnum = 0
 					}))
 				},
 				follow: () => {
@@ -850,7 +853,7 @@
 							}
 						}, (function (e) {
 							v.$data.rows = [{
-								title: "作品",
+								title: window.$t('js.main.5sb0258vzpw0'),
 								worklist: e.data.worklist,
 								userlist: e.data.userlist
 							}]
@@ -873,7 +876,7 @@
 					}))
 				},
 				del: e => {
-					confirm("你确定要删除此作品吗") && post({
+					confirm(window.$t('js.main.5sb0258vzs00')) && post({
 						url: "work/delete",
 						data: {
 							id: e
@@ -889,7 +892,7 @@
 							id: getQueryString("id")
 						}
 					}, (function (e) {
-						e.data.indexOf("etime") ? dialog(e.data + "<br>链接有效期7天，获取到此链接的人可查看此作品") : dialog(e.data + "<br>分享此作品给未注册40code的人，通过此链接注册，你可获得100金币")
+						dialog(e.data + "<br>"+window.$t('js.main.5sb0drv2fxk0')) 
 					}))
 				},
 				collection: () => {
@@ -902,16 +905,16 @@
 							work_id: v.workview.id
 						}
 					}, (() => {
-						alert("取消收藏成功"), top.v.workview.is_collection = 0, v.workview.num_collections--
+						alert(window.$t('js.main.5sb0258vzuc0')), top.v.workview.is_collection = 0, v.workview.num_collections--
 					}), (e => {
 						alert(e.responseJSON.error)
 					}))
 				},
 				analysis: () => {
-					alert("请稍等");
+					alert(window.$t('js.main.5sb0258vzww0'));
 					var e = (top.vm || top[0].vm || top[1].vm || top[2].vm)
 						.runtime.targets.map((e => e.sprite.blocks._blocks));
-					if (!e.length) return void alert("请等待作品加载完毕再进行分析");
+					if (!e.length) return void alert(window.$t('js.main.5sb0258vzzc0'));
 					var t = ["control_start_as_clone", "procedures_definition", "procedures_prototype", "event_whenflagclicked", "event_whenkeypressed", "event_whenstageclicked", "event_whenthisspriteclicked", "event_whenbackdropswitchesto", "event_whengreaterthan", "event_whenbroadcastreceived", "makeymakey_whenMakeyKeyPressed", "makeymakey_whenCodePressed"],
 						n = ["control_repeat", "math_whole_number", "control_forever", "control_if", "control_if_else", "control_repeat_until", "control_while", "control_for_each", "math_whole_number"],
 						o = {},
@@ -974,17 +977,17 @@
 		},
 		104: e => {
 			e.exports = function (e) {
-				getuserinfo(), v.stitle("账号设置")
+				getuserinfo(), v.stitle(window.$t('js.main.5sb0258vxec0'))
 			}
 		},
 		174: e => {
 			e.exports = e => {
-				getQueryString("f") ? v.stitle("关注列表") : v.stitle("粉丝列表"), v.user.getlist(e)
+				getQueryString("f") ? v.stitle(window.$t('js.main.5sb0258w01c0')) : v.stitle(window.$t('js.main.5sb0258w03g0')), v.user.getlist(e)
 			}
 		},
 		828: e => {
 			e.exports = function () {
-				v.stitle("40code少儿编程社区"), get({
+				v.stitle("code8 - Creative Programming Community"), get({
 					url: "work/index"
 				}, (function (e) {
 					v.$data.rows = e.data
@@ -1001,12 +1004,12 @@
 		},
 		251: e => {
 			e.exports = e => {
-				v.stitle("消息"), v.user.getmessage()
+				v.stitle(window.$t('js.main.5sb0258w05o0')), v.user.getmessage()
 			}
 		},
 		209: e => {
 			e.exports = function () {
-				v.stitle("我的工作室"), get({
+				v.stitle(window.$t('js.main.5sb0258vx8c0')), get({
 					url: "studio/my"
 				}, (function (e) {
 					Vue.set(v.studio, "my", e.data)
@@ -1015,7 +1018,7 @@
 		},
 		715: e => {
 			e.exports = function () {
-				v.stitle("我的作品"), get({
+				v.stitle(window.$t('js.main.5sb0258vx5c0')), get({
 					url: "work/my"
 				}, (function (e) {
 					v.$data.mywork = e.data
@@ -1045,7 +1048,7 @@
 		},
 		253: e => {
 			e.exports = () => {
-				v.stitle("登录注册"), setTimeout((() => {
+				v.stitle(window.$t('js.main.5sb0258w07o0')), setTimeout((() => {
 					// myCaptcha = _dx.Captcha(document.getElementById("c1"), {
 					// 	appId: "39248c3724c1b6b8f2b77645fde5b19e",
 					// 	apiServer: "https://vip56.dingxiang-inc.com",
@@ -1137,13 +1140,13 @@
 		},
 		758: e => {
 			e.exports = function (e) {
-				v.stitle("工作室"), Vue.set(v.studio, "info", null), Vue.set(v.studio, "userlist", null), get({
+				v.stitle(window.$t('js.main.5sb0258w09s0')), Vue.set(v.studio, "info", null), Vue.set(v.studio, "userlist", null), get({
 					url: "studio/info",
 					data: {
 						id: e
 					}
 				}, (function (e) {
-					e.data && (Vue.set(v.studio, "info", e.data), v.studio.info.introduce2 = v.studio.info.introduce ? markdownToHtml(v.studio.info.introduce) : "当前工作室暂时没有介绍哦", v.comment.getcomment(), v.studio.getwork(), v.studio.getuser(), v.detail ? v.item.getwork() : setTimeout((() => {
+					e.data && (Vue.set(v.studio, "info", e.data), v.studio.info.introduce2 = v.studio.info.introduce ? markdownToHtml(v.studio.info.introduce) : window.$t('js.main.5sb0258w0c00'), v.comment.getcomment(), v.studio.getwork(), v.studio.getuser(), v.detail ? v.item.getwork() : setTimeout((() => {
 						v.detail && v.item.getwork()
 					}), 2e3), setTimeout((() => {
 						$("textarea")
@@ -1154,7 +1157,7 @@
 		},
 		811: e => {
 			e.exports = function (e) {
-				v.stitle("工作室设置"), Vue.set(v.studio, "info", null), get({
+				v.stitle(window.$t('js.main.5sb0258w0e00')), Vue.set(v.studio, "info", null), get({
 					url: "studio/info",
 					data: {
 						id: e
@@ -1166,7 +1169,7 @@
 		},
 		534: e => {
 			e.exports = function (e) {
-				v.stitle("用户"), v.user.edit = 0, v.$data.workview = {
+				v.stitle(window.$t('js.main.5sb0258w0g40')), v.user.edit = 0, v.$data.workview = {
 					image: "6e2b0b1056aaa08419fb69a3d7aa5727.png"
 				}, get({
 					url: "user/info",
@@ -1174,7 +1177,7 @@
 						id: e
 					}
 				}, (function (e) {
-					console.log(e), e.data && (v.stitle(e.data[0] && e.data[0].nickname), v.$data.workview = e.data[0], v.workview.introduce2 = v.workview.introduce ? markdownToHtml(v.workview.introduce) : "当前用户暂时没有介绍哦", v.comment.getcomment(), v.user.getwork(6), v.user.getfolder(), v.detail ? v.item.getwork() : setTimeout((() => {
+					console.log(e), e.data && (v.stitle(e.data[0] && e.data[0].nickname), v.$data.workview = e.data[0], v.workview.introduce2 = v.workview.introduce ? markdownToHtml(v.workview.introduce) : window.$t('js.main.5sb0258w0ig0'), v.comment.getcomment(), v.user.getwork(6), v.user.getfolder(), v.detail ? v.item.getwork() : setTimeout((() => {
 						v.detail && v.item.getwork()
 					}), 2e3), setTimeout((() => {
 						$("textarea")
@@ -1186,7 +1189,7 @@
 		},
 		960: e => {
 			e.exports = function (e) {
-				v.stitle("scratch作品"), v.$data.workview = {
+				v.stitle("work"), v.$data.workview = {
 					id: 0
 				}, get({
 					url: "work/info",
@@ -1203,7 +1206,7 @@
 						$("textarea")
 							.unbind("paste")
 							.bind("paste", v.paste)
-					}), 100)) : alert("服务器或网络错误")
+					}), 100)) : alert(window.$t('js.main.5sb0258w0kk0'))
 				}))
 			}
 		},
@@ -1211,7 +1214,7 @@
 			e.exports = function (e) {
 				v.$data.workview = {
 					image: "6e2b0b1056aaa08419fb69a3d7aa5727.png"
-				}, delete waitRequest.cover, v.stitle("作品信息设置"), get({
+				}, delete waitRequest.cover, v.stitle(window.$t('js.main.5sb0258w0mk0')), get({
 					url: "work/info",
 					data: {
 						id: e
@@ -1226,25 +1229,188 @@
 		319: e => {
 			e.exports = {
 				props: ["info", "host", "item", "c"],
-				template: ' <v-tooltip bottom color="success">\n    <template v-slot:activator="{ on, attrs }">\n    <v-card\n      class="mx-auto pa-2 sd"\n      rounder\n      v-on:click="c(info.itemId)"\n      v-bind="attrs"\n      v-on="on"\n    >\n\n         <v-img :src="host.data+\'/static/internalapi/asset/\'+(info.item.thumbId || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" style="width:100%"\n  max-height="200" class="mx-auto"\n  v-on:click="c(info.itemId)"\n  max-width="200"></v-img>\n      <span style="position: absolute;color: #222;background-color: #fff;border-radius: 0 0 10px;-webkit-box-shadow: 0 2px 10px #e8e8e8;box-shadow: 0 2px 10px #e8e8e8;text-align: center;left: 0;top: 0;width: 24px;height: 24px;line-height: 24px;">{{info.count}}</span>\n    </v-card>\n    </template>\n    <span style="max-width:130px">{{info.item.name}}<br>{{info.item.descp}}</span>\n  </v-tooltip>'
+				template: ' <v-tooltip bottom color="success">\n    <template v-slot:activator="{ on, attrs }">\n    <v-card\n      class="mx-auto pa-2 sd"\n      rounder\n      v-on:click="c(info.itemId)"\n      v-bind="attrs"\n      v-on="on"\n    >\n\n         <v-img :src="host.data+\'/static/\'+(info.item.thumbId || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" style="width:100%"\n  max-height="200" class="mx-auto"\n  v-on:click="c(info.itemId)"\n  max-width="200"></v-img>\n      <span style="position: absolute;color: #222;background-color: #fff;border-radius: 0 0 10px;-webkit-box-shadow: 0 2px 10px #e8e8e8;box-shadow: 0 2px 10px #e8e8e8;text-align: center;left: 0;top: 0;width: 24px;height: 24px;line-height: 24px;">{{info.count}}</span>\n    </v-card>\n    </template>\n    <span style="max-width:130px">{{info.item.name}}<br>{{info.item.descp}}</span>\n  </v-tooltip>'
 			}
 		},
 		831: e => {
 			e.exports = {
 				props: ["comment", "host", "detail", "type", "author", "date"],
-				template: '<div v-if="comment.comment" class="my-5 comment-view">\n    <div v-for="(i, index) in comment.comment.comment" class="my-6">\n        <div v-for="j in comment.comment.user[i.fromuser.toString()]" class="mt-2">\n            <div>\n                <v-row no-gutters>\n                    <span style="flex: 0 0 5px;"></span>\n                    <span style="flex: 0 0 10px;" class="mt-1">\n                        <a :href="\'#page=user&id=\'+i.fromuser">\n                            <span :class="\'avatar2 id\'+i.fromuser"></span> <v-avatar size=40 class="">\n                                <img\n                                    :src="host.data+\'/static/internalapi/asset/\'+(j.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')">\n                            </v-avatar>\n                        </a>\n                    </span>\n                    <span style="flex: 0 0 10px;"></span>\n                    <span style="flex: 0 0 calc( 100% - 60px)">\n                        <v-row no-gutters>\n                            <v-col cols="12">\n                                <a :href="\'#page=user&id=\'+i.fromuser">\n                                    {{ j.nickname }} <span style="color:#888;font-size: 7px;">{{ i.time }}<span class="ml-2" v-if="i.ip_format">[{{ i.ip_format }}]</span></span>\n                                </a>\n                                <a :href="`#page=studio&id=${comment.comment.studio[j.studio].id}`"\n                                    v-if="comment.comment.studio[j.studio]">\n                                    <v-btn style="text-transform: none!important;"\n                                        :color="comment.comment.studio[j.studio].color || \'green\'" class="sd tg" small>\n                                        <span style="color:white">{{ comment.comment.studio[j.studio].name }}</span>\n                                    </v-btn>\n                                </a>\n                            </v-col>\n                            <v-col cols="12" >\n                                <span color="accent" class="pm" v-html="i.comment"></span>\n                                <v-btn class="text--secondary float-left" text small\n                                    v-on:click="comment.showreply(i.id,)" style="margin-top: -15px;">\n                                    <v-icon>mdi-reply</v-icon> 回复\n                                </v-btn>\n                                <v-btn class="text--secondary float-right" text small style="margin-top: -15px;"\n                                    v-if="detail && (detail.id==i.touser || detail.id==i.fromuser || detail.is_admin)"\n                                    v-on:click="comment.delete(i.id,detail.id==i.touser || detail.id==i.fromuser)">\n                                    <v-icon>mdi-delete</v-icon> 删除\n                                </v-btn>\n                                <br>\n                                <span v-if="detail && comment.replyid==i.id">\n                                    <br>\n                                    <s-c2 :comment="comment" :host="host" :detail="detail" :reply="i.id" class="mt">\n                                    </s-c2>\n                                </span>\n\n\n                            </v-col>\n                        </v-row>\n                    </span>\n\n                </v-row>\n            </div>\n            <div v-if="i.replynum">\n                <div v-for="(k,num) in comment.comment.reply[i.id.toString()]">\n                    <div v-for="j in comment.comment.user[k.fromuser.toString()]" class="mt-2" v-if="num<2 || i.show">\n\n                        <v-row no-gutters>\n                            <span style="flex: 0 0 50px;"></span>\n                            <span style="flex: 0 0 10px;" class="mt-1">\n                                <a :href="\'#page=user&id=\'+j.id">\n                                    <span :class="\'avatar2 id\'+j.id"></span><v-avatar size=40 class="">\n                                        <img\n                                            :src="host.data+\'/static/internalapi/asset/\'+(j.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')">\n                                    </v-avatar>\n                                </a>\n                            </span>\n                            <span style="flex: 0 0 15px;"></span>\n                            <span style="flex:0 0 calc( 100% - 110px )">\n                                <v-row no-gutters>\n                                    <v-col cols="12">\n                                        <a :href="\'#page=user&id=\'+k.fromuser">\n                                            {{ j.nickname }} <span\n                                                style="color:#888;font-size: 7px;">{{ k.time }} <span class="ml-2" v-if="k.ip_format">[{{ k.ip_format }}]</span> </span>\n                                        </a>\n                                        <a :href="`#page=studio&id=${comment.comment.studio[j.studio].id}`"\n                                            v-if="comment.comment.studio[j.studio]">\n                                            <v-btn style="text-transform: none!important;"\n                                                :color="comment.comment.studio[j.studio].color || \'green\'" class="sd tg"\n                                                small>\n                                                <span\n                                                    style="color:white">{{ comment.comment.studio[j.studio].name }}</span>\n                                            </v-btn>\n                                        </a>\n                                    </v-col>\n                                    <v-col cols="12">\n                                        <span color="accent" class="pm" v-html="k.comment"></span>\n                                        <v-btn class="text--secondary float-left" text small\n                                            v-on:click="comment.showreply(i.id,k.id)" style="margin-top: -15px;">\n                                            <v-icon>mdi-reply</v-icon> 回复\n                                        </v-btn>\n                                        <v-btn class="text--secondary float-right" text small\n                                            v-if="detail && (detail.id==k.fromuser || detail.is_admin)" style="margin-top: -15px;"\n                                            v-on:click="comment.deletereply(k.id,detail.id==k.fromuser)">\n                                            <v-icon>mdi-delete</v-icon> 删除\n                                        </v-btn>\n                                    </v-col>\n                                </v-row>\n                            </span>\n\n\n                        </v-row>\n                    </div>\n                </div>\n                <div class="text-center">\n                    <v-btn class="text--secondary px-auto" v-if="i.replynum>2 && !i.show" text small v-on:click="comment.showmore(index)" style="">\n                        显示更多\n                    </v-btn>\n                </div>\n            </div>\n        </div>\n        <div v-if="index%4==0 && comment.comment.ad && comment.comment.ad[index/4]" class="mt-2">\n            <v-row no-gutters>\n                <span style="flex: 0 0 5px;"></span>\n                <span style="flex: 0 0 10px;" class="mt-3">\n                    <a :href="\'#page=user&id=\'+comment.comment.ad[index/4].author">\n                       <span :class="\'avatar2 id\'+comment.comment.ad[index/4%4].author"></span> <v-avatar size=40 class="">\n                            <img\n                                :src="host.data+\'/static/internalapi/asset/\'+(comment.comment.admap[comment.comment.ad[index/4%4].author].head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')">\n                        </v-avatar>\n                    </a>\n                </span>\n                <span style="flex: 0 0 10px;"></span>\n                <span style="flex: 0 0 calc( 100% -60px ) ;">\n                    <v-row no-gutters>\n                        <v-col cols="12">\n                        <a :href="\'#page=work&id=\'+comment.comment.ad[index/4%4].id">\n                        {{comment.comment.ad[index/4%4].name}}\n                        </a>\n                            <span style="color:#999">(作品推荐卡)</span>\n                            <span class="ml-2"\n                                style="color:#777">{{ date(comment.comment.ad[index/4%4].update_time) }}</span>\n                        </v-col>\n                        <span style="flex: 0 0 200px;">\n                            <a :href="\'#page=work&id=\'+comment.comment.ad[index/4%4].id">\n                                <img style="max-width:200px"\n                                    :src="host.data+\'/static/internalapi/asset/\'+(comment.comment.ad[index/4%4].image || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" />\n                            </a>\n                        </span>\n                        <span style="flex: 0 0 10px;"></span>\n                        <span style="flex: 0 0 200px;">\n                            <span style="color:#999">\n                                <v-icon size="16">mdi-eye</v-icon> {{ comment.comment.ad[index/4%4].look }}\n                            </span>\n                            <span style="color:#999" class="ml-1">\n                                <v-icon size="16">mdi-heart</v-icon> {{ comment.comment.ad[index/4%4].like }}\n                            </span><br>\n                            <span style="color:#999">作者：</span><a :href="\'#page=user&id=\'+comment.comment.ad[index/4%4].author">\n                            {{comment.comment.admap[comment.comment.ad[index/4%4].author].nickname}}\n                            </a>\n                        </span>\n                    </v-row>\n        </div>\n    </div>\n    <div class="text-center my-3" v-if="comment.comment.num>0">\n        <v-pagination v-model="comment.page" :length="Math.ceil(comment.comment.num/6)" :total-visible="7">\n        </v-pagination>\n    </div>\n</div>\n<div v-else>\n    此用户暂时没有评论哦\n</div>'
+				template: `<div v-if="comment.comment" class="my-5 comment-view">
+				<div v-for="(i, index) in comment.comment.comment" class="my-6">
+					<div v-for="j in comment.comment.user[i.fromuser.toString()]" class="mt-2">
+						<div>
+							<v-row no-gutters>
+								<span style="flex: 0 0 5px;"></span>
+								<span style="flex: 0 0 10px;" class="mt-1">
+									<a :href="\'#page=user&id=\'+i.fromuser">
+										<span :class="\'avatar2 id\'+i.fromuser"></span> <v-avatar size=40 class="">
+											<img
+												:src="host.data+\'/static/\'+(j.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')">
+										</v-avatar>
+									</a>
+								</span>
+								<span style="flex: 0 0 10px;"></span>
+								<span style="flex: 0 0 calc( 100% - 60px)">
+									<v-row no-gutters>
+										<v-col cols="12">
+											<a :href="\'#page=user&id=\'+i.fromuser">
+												{{ j.nickname }} <span style="color:#888;font-size: 7px;">{{ i.time }}<span class="ml-2" v-if="i.ip_format">[{{ i.ip_format }}]</span></span>
+											</a>
+											<a :href="\`#page=studio&id=\${comment.comment.studio[j.studio].id}\`"
+												v-if="comment.comment.studio[j.studio]">
+												<v-btn style="text-transform: none!important;"
+													:color="comment.comment.studio[j.studio].color || \'green\'" class="sd tg" small>
+													<span style="color:white">{{ comment.comment.studio[j.studio].name }}</span>
+												</v-btn>
+											</a>
+										</v-col>
+										<v-col cols="12" >
+											<span color="accent" class="pm" v-html="i.comment"></span>
+											<v-btn class="text--secondary float-left" text small
+												v-on:click="comment.showreply(i.id,)" style="margin-top: -15px;">
+												<v-icon>mdi-reply</v-icon>${window.$t('code8.site.test3.5sbkhftojdo0')}
+											</v-btn>
+											<v-btn class="text--secondary float-right" text small style="margin-top: -15px;"
+												v-if="detail && (detail.id==i.touser || detail.id==i.fromuser || detail.is_admin)"
+												v-on:click="comment.delete(i.id,detail.id==i.touser || detail.id==i.fromuser)">
+												<v-icon>mdi-delete</v-icon> ${window.$t('code8.site.test3.5sbkhftokp80')}
+											</v-btn>
+											<br>
+											<span v-if="detail && comment.replyid==i.id">
+												<br>
+												<s-c2 :comment="comment" :host="host" :detail="detail" :reply="i.id" class="mt">
+												</s-c2>
+											</span>
+			
+			
+										</v-col>
+									</v-row>
+								</span>
+			
+							</v-row>
+						</div>
+						<div v-if="i.replynum">
+							<div v-for="(k,num) in comment.comment.reply[i.id.toString()]">
+								<div v-for="j in comment.comment.user[k.fromuser.toString()]" class="mt-2" v-if="num<2 || i.show">
+			
+									<v-row no-gutters>
+										<span style="flex: 0 0 50px;"></span>
+										<span style="flex: 0 0 10px;" class="mt-1">
+											<a :href="\'#page=user&id=\'+j.id">
+												<span :class="\'avatar2 id\'+j.id"></span><v-avatar size=40 class="">
+													<img
+														:src="host.data+\'/static/\'+(j.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')">
+												</v-avatar>
+											</a>
+										</span>
+										<span style="flex: 0 0 15px;"></span>
+										<span style="flex:0 0 calc( 100% - 110px )">
+											<v-row no-gutters>
+												<v-col cols="12">
+													<a :href="\'#page=user&id=\'+k.fromuser">
+														{{ j.nickname }} <span
+															style="color:#888;font-size: 7px;">{{ k.time }} <span class="ml-2" v-if="k.ip_format">[{{ k.ip_format }}]</span> </span>
+													</a>
+													<a :href="\`#page=studio&id=\$comment.comment.studio[j.studio].id}\`"
+														v-if="comment.comment.studio[j.studio]">
+														<v-btn style="text-transform: none!important;"
+															:color="comment.comment.studio[j.studio].color || \'green\'" class="sd tg"
+															small>
+															<span
+																style="color:white">{{ comment.comment.studio[j.studio].name }}</span>
+														</v-btn>
+													</a>
+												</v-col>
+												<v-col cols="12">
+													<span color="accent" class="pm" v-html="k.comment"></span>
+													<v-btn class="text--secondary float-left" text small
+														v-on:click="comment.showreply(i.id,k.id)" style="margin-top: -15px;">
+														<v-icon>mdi-reply</v-icon> ${window.$t('code8.site.test3.5sbkhftojdo0')}
+													</v-btn>
+													<v-btn class="text--secondary float-right" text small
+														v-if="detail && (detail.id==k.fromuser || detail.is_admin)" style="margin-top: -15px;"
+														v-on:click="comment.deletereply(k.id,detail.id==k.fromuser)">
+														<v-icon>mdi-delete</v-icon> ${window.$t('code8.site.test3.5sbkhftokp80')}
+													</v-btn>
+												</v-col>
+											</v-row>
+										</span>
+			
+			
+									</v-row>
+								</div>
+							</div>
+							<div class="text-center">
+								<v-btn class="text--secondary px-auto" v-if="i.replynum>2 && !i.show" text small v-on:click="comment.showmore(index)" style="">
+									${window.$t('code8.site.test3.5sbkhftokwg0')}
+								</v-btn>
+							</div>
+						</div>
+					</div>
+					<div v-if="index%4==0 && comment.comment.ad && comment.comment.ad[index/4]" class="mt-2">
+						<v-row no-gutters>
+							<span style="flex: 0 0 5px;"></span>
+							<span style="flex: 0 0 10px;" class="mt-3">
+								<a :href="\'#page=user&id=\'+comment.comment.ad[index/4].author">
+								   <span :class="\'avatar2 id\'+comment.comment.ad[index/4%4].author"></span> <v-avatar size=40 class="">
+										<img
+											:src="host.data+\'/static/\'+(comment.comment.admap[comment.comment.ad[index/4%4].author].head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')">
+									</v-avatar>
+								</a>
+							</span>
+							<span style="flex: 0 0 10px;"></span>
+							<span style="flex: 0 0 calc( 100% -60px ) ;">
+								<v-row no-gutters>
+									<v-col cols="12">
+									<a :href="\'#page=work&id=\'+comment.comment.ad[index/4%4].id">
+									{{comment.comment.ad[index/4%4].name}}
+									</a>
+										<span style="color:#999">(${window.$t('code8.site.test3.5sbkhftol180')})</span>
+										<span class="ml-2"
+											style="color:#777">{{ date(comment.comment.ad[index/4%4].update_time) }}</span>
+									</v-col>
+									<span style="flex: 0 0 200px;">
+										<a :href="\'#page=work&id=\'+comment.comment.ad[index/4%4].id">
+											<img style="max-width:200px"
+												:src="host.data+\'/static/\'+(comment.comment.ad[index/4%4].image || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" />
+										</a>
+									</span>
+									<span style="flex: 0 0 10px;"></span>
+									<span style="flex: 0 0 200px;">
+										<span style="color:#999">
+											<v-icon size="16">mdi-eye</v-icon> {{ comment.comment.ad[index/4%4].look }}
+										</span>
+										<span style="color:#999" class="ml-1">
+											<v-icon size="16">mdi-heart</v-icon> {{ comment.comment.ad[index/4%4].like }}
+										</span><br>
+										<span style="color:#999">${window.$t('code8.site.test3.5sbkhftol5c0')}：</span><a :href="\'#page=user&id=\'+comment.comment.ad[index/4%4].author">
+										{{comment.comment.admap[comment.comment.ad[index/4%4].author].nickname}}
+										</a>
+									</span>
+								</v-row>
+							</span>
+						</v-row>
+					</div>
+				</div>
+				<div class="text-center my-3" v-if="comment.comment.num>0">
+					<v-pagination v-model="comment.page" :length="Math.ceil(comment.comment.num/6)" :total-visible="7">
+					</v-pagination>
+				</div>
+			</div>
+			<div v-else>
+				${window.$t('code8.site.test3.5sbkhftolro0')}\n</div>`
 			}
 		},
 		370: e => {
 			e.exports = {
 				props: ["comment", "reply"],
-				template: '<span>\n    <v-textarea clearable v-model="comment.text[reply?\'c-\'+reply:\'comment\']"\n    clear-icon="mdi-close-circle" :id="reply?\'c-\'+reply:\'comment\'" filled label="评论" auto-grow :value="comment.text[reply?\'c-\'+reply:\'comment\']" maxlength="500" counter>\n    </v-textarea>\n    <v-btn class="pa-2 mx-auto sd" v-on:click="comment.send(reply)"  color="accent"  block>发送</v-btn>\n</span>\n'
+				template: `<span>\n    <v-textarea clearable v-model="comment.text[reply?\'c-\'+reply:\'comment\']"\n    clear-icon="mdi-close-circle" :id="reply?\'c-\'+reply:\'comment\'" filled label="${window.$t('code8.site.t.5sauclgyj2w0')}" auto-grow :value="comment.text[reply?\'c-\'+reply:\'comment\']" maxlength="500" counter>\n    </v-textarea>\n    <v-btn class="pa-2 mx-auto sd" v-on:click="comment.send(reply)"  color="accent"  block>${window.$t('js.main.5sbkjtqik000')}</v-btn>\n</span>\n`
 			}
 		},
 		467: e => {
 			e.exports = {
 				props: ["folder", "host", "user"],
-				template: '\n    <v-card class="mb-3 sd">\n    <v-card :href="\'#page=search&name=&author=&type=0&p=1&s=4&sid=&fl=&fan=&follow=&folder=\'+folder.id+\'&title=\'+user+\'的收藏夹 - \'+folder.name" elevation="0">\n        <v-img :src="host.data+\'/static/internalapi/asset/\'+folder.cover" :aspect-ratio="4/3">\n        </v-img>\n        <v-row class="pt-5 pl-5 pb-2" style="max-width:100%">\n            <div class="row">\n                <div class="col-12 text-truncate ctext--text" style="font-size:15px;">\n                    {{ folder.name }}\n                </div>\n            </div>\n            <span class="text-truncate" ></span>\n            <span class="ctext--text">{{ folder.is_public?\'公开\':\'私密\' }}</span>\n        </v-row>\n    </v-card>\n</v-card>\n    '
+				template: `\n    <v-card class="mb-3 sd">\n    <v-card :href="\'#page=search&name=&author=&type=0&p=1&s=4&sid=&fl=&fan=&follow=&folder=\'+folder.id+\'&title=\'+user+\'${window.$t('js.main.5sbkjtqila00')} - \'+folder.name" elevation="0">\n        <v-img :src="host.data+\'/static/\'+folder.cover" :aspect-ratio="4/3">\n        </v-img>\n        <v-row class="pt-5 pl-5 pb-2" style="max-width:100%">\n            <div class="row">\n                <div class="col-12 text-truncate ctext--text" style="font-size:15px;">\n                    {{ folder.name }}\n                </div>\n            </div>\n            <span class="text-truncate" ></span>\n            <span class="ctext--text">{{ folder.is_public?\'${'公开'}\':\'${'私密'}\' }}</span>\n        </v-row>\n    </v-card>\n</v-card>\n    `
 			}
 		},
 		421: e => {
@@ -1256,25 +1422,106 @@
 		539: e => {
 			e.exports = {
 				props: ["info", "host", "c"],
-				template: '\n    <v-card outlined @click="c(info.id)">\n    <v-list-item three-line>\n      <v-list-item-content>\n        <v-list-item-title class="text-h5 mb-1">\n          {{info.name}}\n        </v-list-item-title>\n        <v-list-item-subtitle>{{info.descp}}</v-list-item-subtitle>\n      </v-list-item-content>\n\n      <v-list-item-avatar\n        tile\n        size="80"\n      ><v-img :src="host.data+\'/static/internalapi/asset/\'+(info.thumbId || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" /></v-list-item-avatar>\n    </v-list-item>\n\n    <v-card-actions>\n      <v-btn\n        outlined\n        rounded\n        text\n      >\n        购买\n      </v-btn>\n      <v-spacer></v-spacer>{{info.price}}金币\n    </v-card-actions>\n    \n    \n  </v-card>\n    '
+				template: `\n    <v-card outlined @click="c(info.id)">\n    <v-list-item three-line>\n      <v-list-item-content>\n        <v-list-item-title class="text-h5 mb-1">\n          {{info.name}}\n        </v-list-item-title>\n        <v-list-item-subtitle>{{info.descp}}</v-list-item-subtitle>\n      </v-list-item-content>\n\n      <v-list-item-avatar\n        tile\n        size="80"\n      ><v-img :src="host.data+\'/static/\'+(info.thumbId || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" /></v-list-item-avatar>\n    </v-list-item>\n\n    <v-card-actions>\n      <v-btn\n        outlined\n        rounded\n        text\n      >\n        ${window.$t('js.main.5sbkjtqilhw0')}\n      </v-btn>\n      <v-spacer></v-spacer>{{info.price}}${window.$t('js.main.5sbkjtqilmk0')}\n    </v-card-actions>\n    \n    \n  </v-card>\n    `
 			}
 		},
 		359: e => {
 			e.exports = {
 				props: ["studio", "host"],
-				template: '\n    <v-card :href="\'#page=studio&id=\'+studio.id" class="rounded-lg py-2 sd">\n\n    <v-row class="py-5 px-8">\n        <span style="flex: 0 0 55px;max-width:55px">\n            <v-avatar size="40">\n                <img\n                    :src="host.data+\'/static/internalapi/asset/\'+(studio.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" />\n            </v-avatar>\n        </span>\n        <span style="flex: 0 0 calc( 100% - 55px );max-width:calc( 100% - 55px )">\n            <span color="accent" class="\n            text-h5 text--secondary text-truncate text-caption\n            pr-3\n            ">\n                <div class="row">\n                    <div class="col-12 text-truncate" style="font-size:13px;">\n                        {{ studio.name }}\n                    </div>\n                </div>\n\n                <span class="text--disabled">作品:</span>\n                <a style="color:#555">{{ studio.worknum }}</a>\n                <span class="text--disabled">成员:</span>\n                <a style="color:#555">{{ studio.membernum }}</a>\n            </span>\n\n        </span>\n    </v-row>\n</v-card>\n  \n'
+				template: `\n    <v-card :href="\'#page=studio&id=\'+studio.id" class="rounded-lg py-2 sd">\n\n    <v-row class="py-5 px-8">\n        <span style="flex: 0 0 55px;max-width:55px">\n            <v-avatar size="40">\n                <img\n                    :src="host.data+\'/static/\'+(studio.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" />\n            </v-avatar>\n        </span>\n        <span style="flex: 0 0 calc( 100% - 55px );max-width:calc( 100% - 55px )">\n            <span color="accent" class="\n            text-h5 text--secondary text-truncate text-caption\n            pr-3\n            ">\n                <div class="row">\n                    <div class="col-12 text-truncate" style="font-size:13px;">\n                        {{ studio.name }}\n                    </div>\n                </div>\n\n                <span class="text--disabled">${window.$t('js.main.5sb0258vzpw0')}:</span>\n                <a style="color:#555">{{ studio.worknum }}</a>\n                <span class="text--disabled">${window.$t('js.main.cy')}:</span>\n                <a style="color:#555">{{ studio.membernum }}</a>\n            </span>\n\n        </span>\n    </v-row>\n</v-card>\n  \n`
 			}
 		},
 		975: e => {
 			e.exports = {
 				props: ["user", "host", "position", "o"],
-				template: '\n    <v-card :href="position?null:\'#page=user&id=\'+user.id" class="py-2 sd" :color="user.position==\'3\'?\'red\':user.position==\'1\'?\'green\':user.position==\'2\'?\'orange\':\'\'">\n    <span style="position: absolute;top: 0;right: 0px;color: white;">\n      <template v-if="!position">\n        <v-btn\n          text\n          x-small\n          :color="user.position==\'0\'?\'#666\':\'white\'"\n        >\n          <span v-if="user.position==\'3\'">室长</span>\n          <span v-if="user.position==\'2\'">副室长</span>\n          <span v-if="user.position==\'1\'">管理员</span>\n        </v-btn>\n      </template>\n      <template v-if="position">\n        <div class="text-center">\n          <v-menu offset-y>\n            <template v-slot:activator="{ on, attrs }">\n              <v-btn\n                text\n                x-small\n                v-bind="attrs"\n                v-on="on"\n                :color="user.position==\'0\'?\'#666\':\'white\'"\n              >\n                <span v-if="user.position==\'3\'">室长</span>\n                <span v-if="user.position==\'2\'">副室长</span>\n                <span v-if="user.position==\'1\'">管理员</span>\n                ···\n              </v-btn>\n            </template>\n            <v-list>\n              <v-list-item v-on:click="o.remove(user.id)" v-if="position>user.position">\n                <v-list-item-title>移出工作室</v-list-item-title>\n              </v-list-item>\n              <span v-if="position>1">\n                <v-list-item v-on:click="o.setadmin(user.id,0)" v-if="user.position==\'1\'">\n                  <v-list-item-title >取消管理员</v-list-item-title>\n                </v-list-item>\n                <v-list-item v-on:click="o.setadmin(user.id,1)" v-else>\n                  <v-list-item-title>设为管理员</v-list-item-title>\n                </v-list-item>\n              </span>\n              <span v-if="position>2">\n                <v-list-item v-on:click="o.setadmin(user.id,0)" v-if="user.position==\'2\'">\n                  <v-list-item-title >取消副室长</v-list-item-title>\n                </v-list-item>\n                <v-list-item v-on:click="o.setadmin(user.id,2)" v-else>\n                  <v-list-item-title >设为副室长</v-list-item-title>\n                </v-list-item>\n              </span>\n            </v-list>\n          </v-menu>\n        </div>\n      </template>\n    </span>\n    <div :onclick="\'window.open(\\\'/#page=user&id=\'+user.id+\'\\\')\'">\n      <v-row :class="\'pt-5 px-8 \'+(0?\'\':\'pb-5\')" >\n        <span style="flex: 0 0 55px;max-width:55px">\n          <v-avatar size="40">\n            <img :src="host.data+\'/static/internalapi/asset/\'+(user.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" />\n          </v-avatar>\n        </span>\n        <span style="flex: 0 0 calc( 100% - 55px );max-width:calc( 100% - 55px )">\n          <span color="accent" class="\n              text-h5 text--secondary text-truncate text-caption pr-3\n              ">\n            <div class="row">\n              <div class="col-12 text-truncate" :style="\'font-size:13px;\'+(!user.position?\'\':\'color:#fff\')">\n                {{ user.nickname }}\n              </div>\n            </div>\n            <span class="text-truncate" ></span>\n            <span :style="!user.position?\'color:#aaa\':\'color:#fff\'">金币:</span>\n            <a :style="!user.position?\'color:#aaa\':\'color:#fff\'">{{ user.coins }}</a>\n          </span>\n        </span>\n      </v-row>\n    </div>\n  </v-card>\n  \n'
+				template: `\n    <v-card :href="position?null:\'#page=user&id=\'+user.id" class="py-2 sd" :color="user.position==\'3\'?\'red\':user.position==\'1\'?\'green\':user.position==\'2\'?\'orange\':\'\'">
+    <span style="position: absolute;top: 0;right: 0px;color: white;">
+      <template v-if="!position">
+        <v-btn
+          text
+          x-small
+          :color="user.position==\'0\'?\'#666\':\'white\'"
+        >
+          <span v-if="user.position==\'3\'">${window.$t('js.main.5sbkjtqilrk0')}</span>
+          <span v-if="user.position==\'2\'">${window.$t('js.main.5sbkjtqim1c0')}</span>
+          <span v-if="user.position==\'1\'">${window.$t('js.main.5sbkjtqim7k0')}</span>
+        </v-btn>
+      </template>
+      <template v-if="position">
+        <div class="text-center">
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                text
+                x-small
+                v-bind="attrs"
+                v-on="on"
+                :color="user.position==\'0\'?\'#666\':\'white\'"
+              >
+                <span v-if="user.position==\'3\'">${window.$t('js.main.5sbkjtqilrk0')}</span>
+                <span v-if="user.position==\'2\'">${window.$t('js.main.5sbkjtqim1c0')}</span>
+                <span v-if="user.position==\'1\'">${window.$t('js.main.5sbkjtqim7k0')}</span>
+                ···
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item v-on:click="o.remove(user.id)" v-if="position>user.position">
+                <v-list-item-title>${window.$t('js.main.5sbkjtqimc00')}</v-list-item-title>
+              </v-list-item>
+              <span v-if="position>1">
+                <v-list-item v-on:click="o.setadmin(user.id,0)" v-if="user.position==\'1\'">
+                  <v-list-item-title >${window.$t('js.main.5sbkjtqimg80')}</v-list-item-title>
+                </v-list-item>
+                <v-list-item v-on:click="o.setadmin(user.id,1)" v-else>
+                  <v-list-item-title>${window.$t('js.main.5sbkjtqlr580')}</v-list-item-title>
+                </v-list-item>
+              </span>
+              <span v-if="position>2">
+                <v-list-item v-on:click="o.setadmin(user.id,0)" v-if="user.position==\'2\'">
+                  <v-list-item-title >${window.$t('js.main.5sbkjtqls740')}</v-list-item-title>
+                </v-list-item>
+                <v-list-item v-on:click="o.setadmin(user.id,2)" v-else>
+                  <v-list-item-title >${window.$t('js.main.5sbkjtqlsgo0')}</v-list-item-title>
+                </v-list-item>
+              </span>
+            </v-list>
+          </v-menu>
+        </div>
+      </template>
+    </span>
+    <div >
+      <v-row :class="\'pt-5 px-8 \'+(0?\'\':\'pb-5\')" >
+        <span style="flex: 0 0 55px;max-width:55px">
+          <v-avatar size="40">
+            <img :src="host.data+\'/static/\'+(user.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" />
+          </v-avatar>
+        </span>
+        <span style="flex: 0 0 calc( 100% - 55px );max-width:calc( 100% - 55px )">
+          <span color="accent" class="
+              text-h5 text--secondary text-truncate text-caption pr-3
+              ">
+            <div class="row">
+              <div class="col-12 text-truncate" :style="\'font-size:13px;\'+(!user.position?\'\':\'color:#fff\')">
+                {{ user.nickname }}
+              </div>
+            </div>
+            <span class="text-truncate" ></span>
+            <span :style="!user.position?\'color:#aaa\':\'color:#fff\'">${window.$t('js.main.5sbkjtqilmk0')}:</span>
+            <a :style="!user.position?\'color:#aaa\':\'color:#fff\'">{{ user.coins }}</a>
+          </span>
+        </span>
+      </v-row>
+    </div>
+  </v-card>
+  
+`
 			}
 		},
 		355: e => {
 			e.exports = {
 				props: ["work", "user", "host", "my"],
-				template: '\n    <v-card class="mb-3 sd">\n    <v-card :href="\'#page=work&id=\'+work.id" elevation="0">\n        <v-img :src="host.data+\'/static/internalapi/asset/\'+work.image" :aspect-ratio="4/3"\n            class="white--text align-end" \n            gradient="to bottom, rgba(0,0,0,0) calc( 100% - 26px ) , rgba(0, 0, 0, 0.6)">\n            <span class="ma-2">\n                <span>\n                    <v-icon color="white" size="16">mdi-eye</v-icon>\n                    <span style="font-size: 13px;"> {{ work.look }}</span> \n                </span>\n                <span class="ml-1">\n                    <v-icon color="white" size="16">mdi-heart</v-icon> \n                    <span style="font-size: 13px;"> {{ work.like }}</span> \n                </span>\n                <span class="ml-1">\n                    <v-icon color="white" size="16">mdi-star</v-icon>\n                    <span style="font-size: 13px;"> {{ work.num_collections }}</span>  \n                </span>\n            </span>\n        </v-img>\n        <v-row class="pt-5 pl-5 pb-2" style="max-width:100%" v-if="user">\n            <span style="flex: 0 0 55px;max-width:55px">\n                <v-avatar size="45">\n                    <img :src="host.data+\'/static/internalapi/asset/\'+(user.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" />\n                </v-avatar>\n            </span>\n            <span style="flex: 0 0 calc( 100% - 55px );max-width:calc( 100% - 55px )">\n                <span color="accent" class="\n                    text-h5 text-truncate text-caption pr-3\n                    ">\n                    <div class="row">\n                        <div class="col-12 text-truncate ctext--text" style="font-size:15px;">\n                            {{ work.name }}\n                        </div>\n                    </div>\n                    <span class="text-truncate" ></span>\n                    <span :href="\'#page=user&id=\'+work.author" style="color:#888">{{ user.nickname }}</span>\n                </span>\n            </span>\n        </v-row>\n        <v-row v-else>\n            <div class="col-12 text-truncate ma-3 ctext--text" style="font-size:15px;">\n                {{ work.name }}\n            </div>\n        </v-row>\n    </v-card>\n    <span v-if="my">\n        <v-btn color="green" text v-if="work.publish" depressed block text tile>已发布\n        </v-btn>\n        <v-btn color="red" text v-else depressed block text tile>未发布\n        </v-btn>\n        <span>\n            <v-btn color="accent" class="" v-if="my" :href="\'/editor.html#id=\'+work.id" target="_blank"\n                depressed text block>继续创作\n            </v-btn>\n            <v-btn color="accent" class="" v-if="my" v-on:click="my.del(work.id)" target="_blank"\n                depressed text block>删除\n            </v-btn>\n        </span>\n        <br>\n    </span>\n</v-card>\n    '
+				template: `\n    <v-card class="mb-3 sd">\n    <v-card :href="\'#page=work&id=\'+work.id" elevation="0">\n        <v-img :src="host.data+\'/static/\'+work.image" :aspect-ratio="4/3"\n            class="white--text align-end" \n            gradient="to bottom, rgba(0,0,0,0) calc( 100% - 26px ) , rgba(0, 0, 0, 0.6)">\n            <span class="ma-2">\n                <span>\n                    <v-icon color="white" size="16">mdi-eye</v-icon>\n                    <span style="font-size: 13px;"> {{ work.look }}</span> \n                </span>\n                <span class="ml-1">\n                    <v-icon color="white" size="16">mdi-heart</v-icon> \n                    <span style="font-size: 13px;"> {{ work.like }}</span> \n                </span>\n                <span class="ml-1">\n                    <v-icon color="white" size="16">mdi-star</v-icon>\n                    <span style="font-size: 13px;"> {{ work.num_collections }}</span>  \n                </span>\n            </span>\n        </v-img>
+				        <v-row class="pt-5 pl-5 pb-2" style="max-width:100%" v-if="user">\n            <span style="flex: 0 0 55px;max-width:55px">\n                <v-avatar size="45">\n                    <img :src="host.data+\'/static/\'+(user.head || \'6e2b0b1056aaa08419fb69a3d7aa5727.png\')" />\n                </v-avatar>\n            </span>\n            <span style="flex: 0 0 calc( 100% - 55px );max-width:calc( 100% - 55px )">\n                <span color="accent" class="\n                    text-h5 text-truncate text-caption pr-3\n                    ">\n                    <div class="row">\n                        <div class="col-12 text-truncate ctext--text" style="font-size:15px;">\n                            {{ work.name }}\n                        </div>\n                    </div>\n                    <span class="text-truncate" ></span>\n                    <span :href="\'#page=user&id=\'+work.author" style="color:#888">{{ user.nickname }}</span>\n                </span>\n            </span>\n        </v-row>\n        <v-row v-else>\n            <div class="col-12 text-truncate ma-3 ctext--text" style="font-size:15px;">\n                {{ work.name }}\n            </div>\n        </v-row>\n    </v-card>\n    <span v-if="my">\n        <v-btn color="green" text v-if="work.publish" depressed block text tile>${window.$t('js.main.5sbkjtqlsq40')}\n        </v-btn>\n        <v-btn color="red" text v-else depressed block text tile>${window.$t('js.main.5sbkjtqlsx40')}\n        </v-btn>\n        <span>\n            <v-btn color="accent" class="" v-if="my" :href="\'/editor.html#id=\'+work.id" target="_blank"\n                depressed text block>${window.$t('js.main.5sbkjtqlt100')}\n            </v-btn>\n            <v-btn color="accent" class="" v-if="my" v-on:click="my.del(work.id)" target="_blank"\n                depressed text block>${window.$t('js.main.5sbkjtqlt600')}\n            </v-btn>\n        </span>\n        <br>\n    </span>\n</v-card>\n    `
 			}
 		}
 	},
@@ -1336,16 +1583,16 @@
 			rules: __webpack_require__(115),
 			item: __webpack_require__(882),
 			host: {
-				data: "https://40code-cdn.zq990.com",
-				scratch: "https://newsccode-1302921490.cos-website.ap-shanghai.myqcloud.com"
+				data: "https://api.code8.site",
+				scratch: "https://api.code8.site"
 			},
 			work: __webpack_require__(378),
 			lb: [{
-				href: "http://f.40code.com",
+				href: "http://f.code8.site",
 				src: "https://s1.ax1x.com/2023/02/19/pSLoIqP.png"
 			}],
 			items: __webpack_require__(105),
-			pw: e => !/^[0-9]*$/.test(e) || e.length > 9 ? e.length < 6 ? "密码必须大于6位" : void 0 : "纯数字密码必须大于9位",
+			pw: e => !/^[0-9]*$/.test(e) || e.length > 9 ? e.length < 6 ? window.$t('js.main.5sb0258w0ow0') : void 0 : window.$t('js.main.5sb0258w0s00'),
 			sign: __webpack_require__(545),
 			account: __webpack_require__(177),
 			comment: __webpack_require__(201),
@@ -1369,9 +1616,9 @@
 						if ("file" == r.kind) {
 							var l = r.getAsFile();
 							if (0 === l.size) return;
-							if (l.size > 2097152) return void alert("图片大小不能大于2MB");
+							if (l.size > 2097152) return void alert(window.$t('js.main.5sb0258w0u00'));
 							var c = new FormData;
-							if (-1 == ["image/jpeg", "image/png", "image/gif", "image/bmp"].indexOf(l.type)) return "不支持此格式的图片";
+							if (-1 == ["image/jpeg", "image/png", "image/gif", "image/bmp"].indexOf(l.type)) return window.$t('js.main.5sb0258vy0k0');
 
 							function d(e) {
 								$.ajax({
@@ -1384,11 +1631,11 @@
 									dataType: "json",
 									success: function (e) {
 										let t = e.data[2][0][1].Key.split("/"),
-											i = "![](https://40code-cdn.zq990.com/static/internalapi/asset/" + t[t.length - 1] + ")";
+											i = "![](https://api.code8.site/static/" + t[t.length - 1] + ")";
 										o.lazyValue = o.internalValue = o.value = o.value.substring(0, n.selectionStart) + i + o.value.substring(n.selectionEnd, o.value.length)
 									},
 									error: function () {
-										alert("图片上传失败")
+										alert(window.$t('js.main.5sb0258vy300'))
 									}
 								})
 							}
@@ -1446,15 +1693,15 @@
 					cover: 0
 				},
 				worklist: 0,
-				title: "40code少儿编程社区",
+				title: "code8 - Creative Programming Community",
 				getQueryString,
 				stitle: e => {
 					document.title = (e || v.title) + "  -40code", e && (v.title = e)
-				}
+				},
 			};
 		other = {
 			date: e => {
-				if (!e) return "未统计";
+				if (!e) return window.$t('js.main.5sb0258w0w80');
 				let t = "",
 					n = new Date(1e3 * e),
 					o = new Date;
@@ -1462,9 +1709,27 @@
 				return t = n.getYear() == o.getYear() ? n.getMonth() == o.getMonth() && n.getDate() == o.getDate() ? n.getHours() + ":" + (i = n.getMinutes(), (Array(2)
 					.join("0") + i)
 					.slice(-2) + " ") : n.getMonth() + 1 + "-" + n.getDate() + " " : n.getYear() + 1900 + "-" + (n.getMonth() + 1) + "-" + n.getDate() + " ", t
-			}
+			},
+			t:window.$t,
+			selectedLanguage: window.language2,
+			setLanguage:()=>{
+				setCookie('language',v.selectedLanguage,999)
+				location.reload();
+			},
+			languages: [
+				{ text: '简体中文', value: 'zh_cn' },
+				{ text: '繁體中文', value: 'zh_tw' },
+				{ text: 'English', value: 'en' },
+			],
 		};
+		  
+		  // Create VueI18n instance with options
+		// window.i18n = new VueI18n({
+		// locale: 'zh-cn', // set locale
+		// languageFile, // set locale messages
+		// })
 		window.v = new Vue({
+			
 			el: "#app",
 			data: Object.assign(e, t, other),
 			vuetify: new Vuetify({
@@ -1499,6 +1764,7 @@
 				}
 			}
 		});
+		// window.$t=v.$t
 		if (getCookie('darkmode') == '1')
 			v.$vuetify.theme.dark = 1;
 		else

@@ -1,0 +1,1 @@
+(window.webpackJsonpGUI=window.webpackJsonpGUI||[]).push([[51],{1690:function(n,s,o){"use strict";o.r(s),o.d(s,"resources",(function(){return c}));const c={"userscript.js":async function(n){let{addon:s}=n;window.DISABLE_RESTORE_POINTS=!0}}}}]);

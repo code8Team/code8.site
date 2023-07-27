@@ -1,63 +1,9 @@
-apihost = "https://service-dq726wx5-1302921490.sh.apigw.tencentcs.com/";
+apihost = "https://api.code8.site/";
 window.waitRequest = {}, window.scratch = {
-  alertLoadExt: async () => {
-    let context = `请选择：<br>
-    <div class="mdui-list">`;
-    let extList = await ((await fetch(apihost + 'work/ext')).json())
-    for (let i = 0; i < extList.length; i++) {
-      let j = extList[i];
-      context += `
-      <label class="mdui-list-item mdui-ripple">
-        <div class="mdui-checkbox">
-          <input name="extSelect" type="checkbox" ${vm.extensionManager._loadedExtensions.get(j.extId) ? 'checked' : ''}/>
-          <i class="mdui-checkbox-icon"></i>
-        </div>
-        <div class="mdui-list-item-content">${j.name}<span class="mdui-float-right" style="color:#777;font-size:10px;">${j.author}</span></div>
-      </label>
-        `
-    }
-    context += "</div>"
-    mdui.alert(context, () => {
-      for (let i = 0; i < extList.length; i++) {
-        if ($('[name="extSelect"]')[i].checked) {
-          try {
-            if(!vm.extensionManager._loadedExtensions.get(extList[i].extId))
-            vm.extensionManager.loadExtensionURL('https://newsccode-1302921490.cos.ap-shanghai.myqcloud.com/ext/' + extList[i].extId + '.js')
-          } catch (error) {
-            console.log(e)
-          }
-        }
-      }
-    })
-  },
-  uploadExt: async () => {
-      var d = document.createElement('input');
-      d.type = "file";
-      d.accept=".js";
-      d.click();
-      var int = setInterval(() => {
-        if (!d.files.length) {
-          return;
-        }
-        var reader = new FileReader();//新建⼀个FileReader
-        clearInterval(int)
-        try {
-          reader.readAsText(d.files[0])
-          reader.onload = function (evt) { //读取完⽂件之后会回来这⾥
-            // var fileString = evt.target.result; // 读取⽂件内容
-            // vm.extensionManager.loadExtensionURL({data:fileString})
-            var fileString = new Blob([evt.target.result]); // 读取⽂件内容
-            vm.extensionManager.loadExtensionURL(URL.createObjectURL(fileString))
-          }
-        } catch (error) {
-          resolve('')
-          console.log(error)
-        }
-      }, 50)
-  }
+
 };
 var temp2 = {
-  apihost: "https://service-dq726wx5-1302921490.sh.apigw.tencentcs.com/",
+  apihost: "https://api.code8.site/",
 };
 function dataURLToBlob(dataurl) {
   var arr = dataurl.split(',');
@@ -73,7 +19,7 @@ function dataURLToBlob(dataurl) {
 // var workinfo = { "id": 722, "opensource": 1, "publish": 1, "author": 369, "introduce": "从XMW转载过来的，加了个存档码", "name": "躲开球！Dodge Ball!", "time": 1655540550, "image": "4e215e84d3a77d668ea727e747f74f22.png", "look": 16, "like": 0, "delete": 0, "publish_time": 1655543758, "update_time": 1655543691, "issign": 1, "islike": 0, "nickname": "RenJian", "head": "c7d3b642b558c93e56872b6038b2fbd8.jpg", "fuckyou": "cS1zaWduLWFsZ29yaXRobT1zaGExJnEtYWs9QUtJRHFVdDFzVHB2akdaaFk4YW10aktnbWNDVllMdkdNQmowJnEtc2lnbi10aW1lPTE2NTU2NTg5NTQ7MTY1NTY1OTA3NCZxLWtleS10aW1lPTE2NTU2NTg5NTQ7MTY1NTY1OTA3NCZxLWhlYWRlci1saXN0PSZxLXVybC1wYXJhbS1saXN0PSZxLXNpZ25hdHVyZT1jNmVjNzY5NDcwN2JmNzQ1NjY0Yjk1NzBjMmI3ZWZiNDM4ZTU3M2Vi" };
 
 function setCookie(cname, cvalue, exdays) {
-  console.log('设置cookie')
+  console.log(window.$t('js.scratch.5sb6kuv80440'))
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires=" + d.toGMTString();
@@ -102,7 +48,7 @@ function getuserinfo() {
     url: 'user/myinfo'
   }, function (d) {
     userdetail = d.data;
-    console.log('获取信息成功', d)
+    console.log(window.$t('js.scratch.5sb6kuv815c0'), d)
     if ((typeof v) !== "undefined") {
       v.$data.detail = d.data;
       // qh('index')
@@ -118,7 +64,7 @@ function getuserinfosync() {
       url: 'user/myinfo'
     }, function (d) {
       userdetail = d.data;
-      console.log('获取信息成功', d)
+      console.log(window.$t('js.scratch.5sb6kuv815c0'), d)
       if ((typeof v) !== "undefined") {
         v.$data.detail = d.data;
         // qh('index')
@@ -159,7 +105,7 @@ function get(d, n, eee) {
       }
       if (f.cz == 'exit') {
         document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        console.log('清除cookie')
+        console.log(window.$t('js.scratch.5sb6kuv81ac0'))
       }
       d.p && (delete waitRequest[d.p])
       n && n(f)
@@ -171,7 +117,7 @@ function get(d, n, eee) {
       if (eee)
         eee()
       else
-        alert("服务器或网络错误")
+        alert(window.$t('js.scratch.5sb6kuv81dw0'))
     }
   })
 }
@@ -199,7 +145,7 @@ function post(d, n, eee) {
       }
       if (f.cz == 'exit') {
         document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        console.log('清除cookie')
+        console.log(window.$t('js.scratch.5sb6kuv81ac0'))
       }
       d.p && (delete waitRequest[d.p])
       n && n(f)
@@ -208,7 +154,7 @@ function post(d, n, eee) {
       d.p && (delete waitRequest[d.p])
       console.log(e)
       if (eee) eee()
-      else alert("服务器或网络错误")
+      else alert(window.$t('js.scratch.5sb6kuv81dw0'))
     }
   })
 }
@@ -234,7 +180,7 @@ function savecover(callback) {
   $('#b').hide();
   function uplw(d) {
     let f = new FormData();
-    $("#setCover").text('正在保存封面文件');
+    $("#setCover").text(window.$t('js.scratch.5sb6kuv81gs0'));
     f.append("image", d)
     $.ajax({
       url: apihost + 'work/uploads?token=' + getCookie('token'),
@@ -248,15 +194,15 @@ function savecover(callback) {
       success: function (result1) {
         if (result1.code != 1) {
           hy();
-          alert("保存失败");
+          alert(window.$t('js.scratch.5sb6kuv81kg0'));
           return;
         }
         hy(result1);
-        $("#setCover").text('封面保存成功')
+        $("#setCover").text(window.$t('js.scratch.5sb6kuv81ns0'))
       },
       error: function () {
         hy();
-        alert("保存失败");
+        alert(window.$t('js.scratch.5sb6kuv81kg0'));
       }
     });
   }
@@ -265,11 +211,11 @@ function savecover(callback) {
     let k = r.data[2][0][1].Key.split('/');
     callback && callback(k[k.length - 1]);
     setTimeout(() => {
-      $("#setCover").text('设置当前截图为封面');
-      $("#saveProject").text('保存');
+      $("#setCover").text(window.$t("js.scratch.5sb6i8uwwuc0"));
+      $("#saveProject").text(window.$t("js.scratch.5sb6i8uwwz80"));
     }, 5000)
   }
-  $("#setCover").text('正在保存封面……');
+  $("#setCover").text(window.$t('js.scratch.5sb6kuv81rc0'));
   vm.postIOData('video', { forceTransparentPreview: true });
   vm.renderer.requestSnapshot(dataURI => {
     vm.postIOData('video', { forceTransparentPreview: false });
@@ -278,8 +224,8 @@ function savecover(callback) {
   vm.renderer.draw();
 }
 async function saveproject(id, callback, Open) {
-  console.log("自定义按钮1");
-  console.log('分享按钮');
+  console.log(window.$t('js.scratch.5sb6kuv81w00'));
+  console.log(window.$t('js.scratch.5sb6kuv81z80'));
   let data2 = [];
   var vs = vm.assets;
   $("#scratch").css("opacity", "0");
@@ -305,19 +251,19 @@ async function saveproject(id, callback, Open) {
     $('#view').hide();
     $('#dlp').hide();
     try {
-      $("#app > div > div > div > div.gui_menu-bar-position_6ejza.menu-bar_menu-bar_1gLUp.box_box_tWy-0 > div.menu-bar_main-menu_EyCGw > div:nth-child(4) > span:nth-child(3) > div")[0].text("保存")
+      $("#app > div > div > div > div.gui_menu-bar-position_6ejza.menu-bar_menu-bar_1gLUp.box_box_tWy-0 > div.menu-bar_main-menu_EyCGw > div:nth-child(4) > span:nth-child(3) > div")[0].text(window.$t('js.scratch.5sb6kuv821w0'))
     } catch (e) {
       console.log(e)
     }
     setTimeout(() => {
-      $("#setCover").text('设置当前截图为封面');
-      $("#saveProject").text('保存');
+      $("#setCover").text($t("js.scratch.5sb6i8uwwuc0"));
+      $("#saveProject").text($t("js.scratch.5sb6i8uwwz80"));
     }, 5000)
     callback && callback();
   }
   function uplw() {
     let f = new FormData();
-    $("#saveProject").text('正在保存作品文件……');
+    $("#saveProject").text(window.$t('js.scratch.5sb6kuv824w0'));
 
     f.append("work", new Blob([vm.toJSON()]))
     $.ajax({
@@ -333,7 +279,7 @@ async function saveproject(id, callback, Open) {
       success: function (result1) {
         if (result1.code != 1) {
           hy();
-          alert("保存失败");
+          alert(window.$t('js.scratch.5sb6kuv81kg0'));
           return;
         }
         hy();
@@ -346,12 +292,12 @@ async function saveproject(id, callback, Open) {
           
         }
         Open && (location.href = ("/#page=workinfo&publish=1&id=" + workinfo.id + '&name=' + vvv))
-        $("#saveProject").text('作品保存成功')
+        $("#saveProject").text(window.$t('js.scratch.5sb6kuv82880'))
         window.onbeforeunload = function () { return; }
       },
       error: function () {
         hy();
-        alert("保存失败");
+        alert(window.$t('js.scratch.5sb6kuv81kg0'));
       }
     });
   }
@@ -365,16 +311,16 @@ async function saveproject(id, callback, Open) {
       }
       else
         upa(t + 1)
-      console.log('被迫退出')
+      console.log(window.$t('js.scratch.5sb6kuv82bc0'))
       return;
     }
-    if (f(data2[t]).size > 5.5 * 1024 * 1024) {
-      console.log('尺寸过大', t, data2[t], '跳过')
-      mdui.snackbar('含有>5.5MB的素材，已跳过')
-      t++;
-      upa(t);
-      return;
-    }
+    // if (f(data2[t]).size > 5.5 * 1024 * 1024) {
+    //   console.log(window.$t('js.scratch.5sb6kuv82e80'), t, data2[t], window.$t('js.scratch.5sb6kuv82hc0'))
+    //   mdui.snackbar('含有>5.5MB的素材，已跳过')
+    //   t++;
+    //   upa(t);
+    //   return;
+    // }
     // debugger;
     let list = [], data = new FormData(), n = 0, file = f(data2[t]);
     data.append('image', file)
@@ -392,12 +338,12 @@ async function saveproject(id, callback, Open) {
       success: function (result1) {
         if (result1.code != 1) {
           hy();
-          alert("保存失败");
+          alert(window.$t('js.scratch.5sb6kuv81kg0'));
           return;
         }
         if (vm.assets && data2[t] && vm.assets[data2[t]]) vm.assets[data2[t]].clean = true;
         console.log(vm.assets, data2[t])
-        $('#saveProject').text('保存素材中…… ' + parseInt((t + 1/*n + t*/) / data2.length * 10000) / 100 + '%')
+        $('#saveProject').text(window.$t('js.scratch.5sb6kuv82nk0') + parseInt((t + 1/*n + t*/) / data2.length * 10000) / 100 + '%')
         if (t + 1/*n + t*/ >= data2.length) {
           $('#b').hide();
           uplw();
@@ -407,8 +353,8 @@ async function saveproject(id, callback, Open) {
       },
       error: function () {
         hy();
-        alert("保存失败");
-        console.log('保存失败');
+        alert(window.$t('js.scratch.5sb6kuv81kg0'));
+        console.log(window.$t('js.scratch.5sb6kuv81kg0'));
       }
     });
   }
@@ -437,7 +383,7 @@ async function saveproject(id, callback, Open) {
   function aftercheck() {
     if (data2.length) {
       // $("#loadinfo").html('正在保存素材');
-      $('#saveProject').text("正在保存素材……")
+      $('#saveProject').text(window.$t('js.scratch.5sb6kuv82nk0'))
       $('#b').show()
       upa(0);
     }
@@ -445,49 +391,50 @@ async function saveproject(id, callback, Open) {
   }
 
   $('#i2').hide();
-  $('#saveProject').text("正在检查素材列表……")
+  $('#saveProject').text(window.$t('js.scratch.5sb6kuv82qo0'))
   for (let i of vs) {
     if (!i.clean)
       data2.push(i.assetId + '.' + i.dataFormat)
   }
   let checkdata = await new Promise(async (resolve) => {
     console.log('fuckyou', data2)
-    let list = chunk(data2, 1000), filelist = [], num = 0;
+    // let list = chunk(data2, 1000), filelist = [], num = 0;
     // debugger;
-    if (!list.length) resolve([])
-    for (let i = 0; i < list.length; i++) {
-    //   debugger;
-      post({
-        url: 'work/imagelist',
-        data: { list: list[i] }
-      }, (d) => {
-        num++;
-        console.log(d);
-        filelist = filelist.concat(d.data);
-        if (num == list.length) {
-          resolve(filelist);
-        }
-      }, (d) => {
-        resolve(null)
-      })
-      if(i!=list.length-1) await sleep(4000)
-    }
+    // if (!list.length) resolve([])
+    // for (let i = 0; i < list.length; i++) {
+    // //   debugger;
+    //   post({
+    //     url: 'work/imagelist',
+    //     data: { list: list[i] }
+    //   }, (d) => {
+    //     num++;
+    //     console.log(d);
+    //     filelist = filelist.concat(d.data);
+    //     if (num == list.length) {
+    //       resolve(filelist);
+    //     }
+    //   }, (d) => {
+    //     resolve(null)
+    //   })
+    //   if(i!=list.length-1) await sleep(4000)
+    // }
+    resolve(data2)
 
   });
-  if (checkdata) {
-    data2 = checkdata
+  // if (checkdata) {
+    // data2 = checkdata
     console.log(data2)
     aftercheck();
-  } else {
-    alert('作品素材检查失败，请重试，多次失败请联系QQ:3274235903查看原因')
-    hy();
-  }
+  // } else {
+  //   // alert('作品素材检查失败，请重试，多次失败请联系QQ:3274235903查看原因')
+  //   hy();
+  // }
 
 
 }
 function save(open) {
   try {
-    $("#app > div > div > div > div.gui_menu-bar-position_6ejza.menu-bar_menu-bar_1gLUp.box_box_tWy-0 > div.menu-bar_main-menu_EyCGw > div:nth-child(4) > span:nth-child(3) > div")[0].text("保存中……")
+    $("#app > div > div > div > div.gui_menu-bar-position_6ejza.menu-bar_menu-bar_1gLUp.box_box_tWy-0 > div.menu-bar_main-menu_EyCGw > div:nth-child(4) > span:nth-child(3) > div")[0].text(window.$t('js.scratch.5sb6kuv82uk0'))
   } catch (e) {
     console.log(e);
   }
@@ -495,7 +442,7 @@ function save(open) {
     saveproject(null, null, open)
   else {
     try {
-      $("#app > div > div > div > div.gui_menu-bar-position_6ejza.menu-bar_menu-bar_1gLUp.box_box_tWy-0 > div.menu-bar_main-menu_EyCGw > div.menu-bar_menu-bar-item_264qQ > span:nth-child(2) > div")[0].text("改编中……")
+      $("#app > div > div > div > div.gui_menu-bar-position_6ejza.menu-bar_menu-bar_1gLUp.box_box_tWy-0 > div.menu-bar_main-menu_EyCGw > div.menu-bar_menu-bar-item_264qQ > span:nth-child(2) > div")[0].text(window.$t('js.scratch.5sb6kuv82yo0'))
     } catch (e) {
       console.log(e);
     }
