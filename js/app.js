@@ -308,7 +308,7 @@ var msg={
       "code8.site.t.5sauclgyc780": "Explore",
    "code8.site.t.5sauclgyd2o0": "Forum",
    "code8.site.t.5sauclgyda00": "Sponsor code8",
-   "code8.site.t.5sauclgydf40": "Creation",
+   "code8.site.t.5sauclgydf40": "Create",
    "code8.site.t.5sauclgydi00": "Download",
    "code8.site.t.5sauclgydl00": "Login/Register",
    "code8.site.t.5sauclgydpg0": "The current page does not exist",
@@ -602,7 +602,7 @@ var msg={
    "js.scratch.5sb6kuv82uk0": "Saving...",
    "js.scratch.5sb6kuv82yo0": "Adapting...",
    "code8.site.t.user":"user",
-   "Join_Discord":"Join Discord"
+   "Join_Discord":"Join Our Discord!"
     }
   },
   'zh_tw':{
