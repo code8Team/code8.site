@@ -1696,7 +1696,7 @@
 				title: "code8 - Creative Programming Community",
 				getQueryString,
 				stitle: e => {
-					document.title = (e || v.title) + "  -40code", e && (v.title = e)
+					document.title = (e || v.title) + "  - Code8", e && (v.title = e)
 				},
 			};
 		other = {

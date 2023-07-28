@@ -1096,4 +1096,4 @@ function getQueryString(name) {
   }
   var apihost = "https://api.code8.site/api/",
   mianhost="http://127.0.0.1:5500",
-  scratchhost="https://40code-cdn.zq990.com";
+  scratchhost="https://api.code8.site";
