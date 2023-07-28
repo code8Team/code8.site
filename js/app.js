@@ -299,12 +299,13 @@ var msg={
       "js.scratch.5sb6kuv82qo0": "正在检查素材列表……",
       "js.scratch.5sb6kuv82uk0": "保存中……",
       "js.scratch.5sb6kuv82yo0": "改编中……",
-      "code8.site.t.user":"用户"
+      "code8.site.t.user":"用户",
+      "Join_Discord":"加入discord"
     }
   },
   'en':{
     translation:{
-      "code8.site.t.5sauclgyc780": "Discover works",
+      "code8.site.t.5sauclgyc780": "Explore",
    "code8.site.t.5sauclgyd2o0": "Forum",
    "code8.site.t.5sauclgyda00": "Sponsor code8",
    "code8.site.t.5sauclgydf40": "Creation",
@@ -366,7 +367,7 @@ var msg={
    "code8.site.t.5sauclgyji00": "Username",
    "code8.site.t.5sauclgyjk00": "Studio Name",
    "code8.site.t.5sauclgyjnc0": "Found for you",
-   "code8.site.t.5sauclgyjps0": "Email or mobile number",
+   "code8.site.t.5sauclgyjps0": "Email",
    "code8.site.t.5sauclgyjt00": "Email verification code (6 digits)",
    "code8.site.t.5sauclgyjv40": "Send verification code",
    "code8.site.t.5sauclgyjx80": "Already have an account?",
@@ -415,8 +416,8 @@ var msg={
    "code8.site.t.5sauclgymrs0": "The current user has no works yet",
    "code8.site.t.5sauclgymtw0": "His Favorites:",
    "code8.site.t.5sauclgymw40": "The current user has no favorites yet",
-   "code8.site.t.5sauclgymy80": "The current work has not been published, only you can see it, please go to it",
-   "code8.site.t.5sauclgyn040": "Work information editing page",
+   "code8.site.t.5sauclgymy80": "The current work has not been published yet, only you can see it, please go to the",
+   "code8.site.t.5sauclgyn040": "Work information editing page,",
    "code8.site.t.5sauclgyn240": "Check Publish, then click Update to publish",
    "code8.site.t.5sauclgyn480": "The current work has been banned, please contact",
    "code8.site.t.5sauclgyn6g0": "Publish the latest version",
@@ -439,7 +440,7 @@ var msg={
    "code8.site.t.allow": "Allow",
    "code8.site.t.bag": "Backpack",
    "code8.site.t.category": "Category",
-   "code8.site.t.create": "Create",
+   "code8.site.t.create": "Creation time",
    "code8.site.t.forum": "Forum",
    "code8.site.t.head": "Avatar",
    "code8.site.t.login": "Login",
@@ -454,13 +455,13 @@ var msg={
    "code8.site.t.p7": "Follow",
    "code8.site.t.p8": "Comments",
    "code8.site.t.price": "Price",
-   "code8.site.t.publish": "Publish",
+   "code8.site.t.publish": "publish time",
    "code8.site.t.pw": "Password",
    "code8.site.t.register": "Register",
    "code8.site.t.s": "And",
    "code8.site.t.studio": "Studio",
    "code8.site.t.timeConsuming": "Time Consuming",
-   "code8.site.t.update": "Update",
+   "code8.site.t.update": "update time",
    "code8.site.t.use": "use",
    "code8.site.t.use_position": "Use position",
    "code8.site.t.userCenter": "Personal Center",
@@ -600,7 +601,8 @@ var msg={
    "js.scratch.5sb6kuv82qo0": "Checking material list...",
    "js.scratch.5sb6kuv82uk0": "Saving...",
    "js.scratch.5sb6kuv82yo0": "Adapting...",
-   "code8.site.t.user":"user"
+   "code8.site.t.user":"user",
+   "Join_Discord":"Join Discord"
     }
   },
   'zh_tw':{
@@ -900,7 +902,8 @@ var msg={
       "js.scratch.5sb6kuv82qo0": "正在檢查素材列表……",
       "js.scratch.5sb6kuv82uk0": "保存中……",
       "js.scratch.5sb6kuv82yo0": "改編中……",
-      "code8.site.t.user":"用戶"
+      "code8.site.t.user":"用戶",
+      "Join_Discord":"加入discord"
     }
   }
 }

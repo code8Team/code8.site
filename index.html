@@ -75,6 +75,7 @@
 								target="_self" class="ml-5">{{t('code8.site.t.studio')}}</a> <a href="#page=forum&sid=1"
 								style="color:#fff;font-size:10px" class="ml-5">{{t('code8.site.t.5sauclgyd2o0')}}</a>
 							<a href="#page=mywork" style="color:#fff;font-size:10px" class="ml-5">{{t('code8.site.t.5sauclgydf40')}}</a>
+							<a href="#page=mywork" style="color:#fff;font-size:10px" class="ml-5">{{t('Join_Discord')}}</a>
 						</span>
 						<v-spacer>
 						</v-spacer>
@@ -1235,23 +1236,24 @@
 						</v-container>
 					</v-main>
 					<v-footer padless>
+						<v-card width="300px" class="px-4 mx-auto sd">
+							<v-select
+							v-model="selectedLanguage"
+							:items="languages"
+							label="languages"
+							@change="setLanguage"
+							color="white"
+						  ></v-select>
+						</v-card>
 						<v-col cols="12" class="px-5">
 							<span>
 								<div class="float-left">
+									<a href="https://github.com/code8Team">github</a>
 								</div>
 								<div class="float-left ml-5">
+									code8 is not affiliated with Scratch, TurboWarp, the Scratch Team, or the Scratch Foundation.
 								</div>
 							</span>
-							<v-card width="300px" class="px-4 mx-auto sd">
-								<v-select
-								v-model="selectedLanguage"
-								:items="languages"
-								label="languages"
-								@change="setLanguage"
-								color="white"
-							  ></v-select>
-							</v-card>
-							
 							<span class="float-right ctext--text">{{ new Date().getFullYear() }} —
 								<strong>code8</strong>
 							</span>
