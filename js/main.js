@@ -1,5 +1,5 @@
 (() => {
-	
+
 	var __webpack_modules__ = {
 		177: e => {
 			e.exports = {
@@ -123,15 +123,15 @@
 						Vue.set(v.comment, "comment", t), setTimeout(v.comment.b, 300), console.log(window.$t('js.main.5sb0258vwcg0'), e);
 						setTimeout(() => {
 							for (let i = 0; i < t.pendant.length; i++) {
-									let s = 'url(https://api.code8.site/static/' + t.pendant[i].thumbId + ')'
-									let c=$('.avatar2.id' + t.pendant[i].useid)
+								let s = 'url(https://api.code8.site/static/' + t.pendant[i].thumbId + ')'
+								let c = $('.avatar2.id' + t.pendant[i].useid)
 									.css('background-image')
-									if (c)
-										$('.avatar2.id' + t.pendant[i].useid)
-											.css('background-image', c+','+s)
-									else
-										$('.avatar2.id' + t.pendant[i].useid)
-											.css('background-image', s)
+								if (c)
+									$('.avatar2.id' + t.pendant[i].useid)
+										.css('background-image', c + ',' + s)
+								else
+									$('.avatar2.id' + t.pendant[i].useid)
+										.css('background-image', s)
 							}
 						}, 100)
 					}))
@@ -355,7 +355,7 @@
 						v.item.workItems = e.data.filter(e => e.item.category !== 'Pendant')
 						v.user.Pendant = e.data.filter(e => e.item.category == 'Pendant')
 						$('.avatar.id' + v.workview.id)
-								.css('background-image', '')
+							.css('background-image', '')
 						if (v.user.Pendant.length) {
 							let s = ""
 							for (let i = 0; i < v.user.Pendant.length; i++) {
@@ -379,23 +379,23 @@
 		953: e => {
 			e.exports = {
 				0: {
-					t: '\n<div style="width:100%">'+window.$t('js.main.5sb08wussvk0')+'<br>\n' +window.$t('js.main.5sb08wustm80')+'</div>\n<textarea rows="5" id="gyycdsm" class="s-input">'+'说明'+'</textarea>',
+					t: '\n<div style="width:100%">' + window.$t('js.main.5sb08wussvk0') + '<br>\n' + window.$t('js.main.5sb08wustm80') + '</div>\n<textarea rows="5" id="gyycdsm" class="s-input">' + '说明' + '</textarea>',
 					f: '{descp:$("#gyycdsm").val()}'
 				},
 				1: {
-					t: window.$t('js.main.5sb08wustrc0')+'<br><br><br>\n        <textarea rows="5" id="sdfirf" class="s-input">'+window.$t('js.main.p4')+'</textarea>',
+					t: window.$t('js.main.5sb08wustrc0') + '<br><br><br>\n        <textarea rows="5" id="sdfirf" class="s-input">' + window.$t('js.main.p4') + '</textarea>',
 					f: '{descp:$("#sdfirf").val()}'
 				},
 				5: {
 					t: window.$t('js.main.5sb0258vwwg0'),
-					a: window.$t('js.main.5sb08wustug0')+"<br>\n        "
+					a: window.$t('js.main.5sb08wustug0') + "<br>\n        "
 				},
 				6: {
 					t: window.$t('js.main.5sb0258vwzo0'),
-					a: window.$t('js.main.5sb08wustxg0')+"<br>\n        "
+					a: window.$t('js.main.5sb08wustxg0') + "<br>\n        "
 				},
 				12: {
-					t: window.$t('js.main.5sb08wusu180')+'<input id="jysj" class="s-input" value="1"></input>'+window.$t('js.main.5sb08wusu400'),
+					t: window.$t('js.main.5sb08wusu180') + '<input id="jysj" class="s-input" value="1"></input>' + window.$t('js.main.5sb08wusu400'),
 					f: '{time:$("#jysj").val()}'
 				}
 			}
@@ -431,14 +431,14 @@
 				c: function () {
 					location.href = "#page=sc"
 				}
-			}, 
+			},
 			// {
 			// 	title: window.$t('js.main.5sb0258vxjs0'),
 			// 	c: function () {
 			// 		dialog(`\n           你的专属链接<code>\n           ${"https://code8.site/#out=any&i=" + v.detail.id}\n           </code><br>\n           别人(必须是新用户)通过你的专属链接进行账号注册<br>\n           你和他都可获得100金币\n           `)
 			// 	}
 			// },
-			 {
+			{
 				title: window.$t('js.main.5sb0258vxmk0'),
 				c: function () {
 					v.qh2()
@@ -448,7 +448,7 @@
 				c: function () {
 					document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.code8.site";
 					document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
-					 console.log(window.$t('js.main.5sb0258vxrs0')), location.href = ""
+					console.log(window.$t('js.main.5sb0258vxrs0')), location.href = ""
 				}
 			}]
 		},
@@ -771,11 +771,11 @@
 							setCookie('darkmode', '0', 999)
 					}, 100)
 				},
-				getCoins: d=>{
-					get('user/records',function(d){
-						let s='';
-						for(let i=0;i<d.length;i++){
-							s+=`<br>
+				getCoins: d => {
+					get('user/records', function (d) {
+						let s = '';
+						for (let i = 0; i < d.length; i++) {
+							s += `<br>
 							<span class="body-1 text--primary">${d[i].note}</span><br>
 							<span class="body-2" style="margin-top:-5px">
 							<span class="primary--text">${d[i].coin_count}</span>
@@ -789,7 +789,7 @@
 						</div>
 						`)
 					})
-					
+
 				},
 				delmsg: e => {
 					post({
@@ -892,7 +892,7 @@
 							id: getQueryString("id")
 						}
 					}, (function (e) {
-						dialog(e.data + "<br>"+window.$t('js.main.5sb0drv2fxk0')) 
+						dialog(e.data + "<br>" + window.$t('js.main.5sb0drv2fxk0'))
 					}))
 				},
 				collection: () => {
@@ -1705,15 +1705,24 @@
 				let t = "",
 					n = new Date(1e3 * e),
 					o = new Date;
+				let s='-',m=(n.getMonth() + 1);
+				if (v.selectedLanguage == 'en') {
+					s=" "
+					m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1]
+				}
 				var i;
-				return t = n.getYear() == o.getYear() ? n.getMonth() == o.getMonth() && n.getDate() == o.getDate() ? n.getHours() + ":" + (i = n.getMinutes(), (Array(2)
-					.join("0") + i)
-					.slice(-2) + " ") : n.getMonth() + 1 + "-" + n.getDate() + " " : n.getYear() + 1900 + "-" + (n.getMonth() + 1) + "-" + n.getDate() + " ", t
+				return t = n.getYear() == o.getYear() ?
+					n.getMonth() == o.getMonth() && n.getDate() == o.getDate() ?
+						n.getHours() + ":" + (i = n.getMinutes(), (Array(2)
+							.join("0") + i)
+							.slice(-2) + " ")
+						: m + s + n.getDate() + " "
+					: n.getYear() + 1900 + s + m + s + n.getDate() + " ", t
 			},
-			t:window.$t,
+			t: window.$t,
 			selectedLanguage: window.language2,
-			setLanguage:()=>{
-				setCookie('language',v.selectedLanguage,999)
+			setLanguage: () => {
+				setCookie('language', v.selectedLanguage, 999)
 				location.reload();
 			},
 			languages: [
@@ -1722,14 +1731,14 @@
 				{ text: 'English', value: 'en' },
 			],
 		};
-		  
-		  // Create VueI18n instance with options
+
+		// Create VueI18n instance with options
 		// window.i18n = new VueI18n({
 		// locale: 'zh-cn', // set locale
 		// languageFile, // set locale messages
 		// })
 		window.v = new Vue({
-			
+
 			el: "#app",
 			data: Object.assign(e, t, other),
 			vuetify: new Vuetify({
